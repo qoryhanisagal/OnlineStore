@@ -102,4 +102,4 @@ def patch_products(index):
         return "That index does not exist"
         #  ---> We need to return a message if the index does not exist
 
-app.run(debug=True) # This pass the changes to the server when we save
+app.run(debug=True) # This pass the changes to the server when we savepush
