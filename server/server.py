@@ -41,9 +41,9 @@ def fix_id(obj):
 @app.get("/api/products")
 def get_products():
 # ---- > Now we are returning the products list from MongoDB
-# ---- > We are converting the ObjectId to a string
-# ---- > We are adding the product to the products list
-# ---- > We are returning the products list   
+# ---- > I are converting the ObjectId to a string
+# ---- > I are adding the product to the products list
+# ---- > I are returning the products list   
 
     products_db = []
     cursor = db.products.find({}) # This is a cursor that will go through the products collection
@@ -64,34 +64,34 @@ def get_products():
 def post_products():
     #    ---> Here we need to get the product from the request
     product = request.get_json()
-    #    ---> We need to add the product to the products list
+    #    ---> I need to add the product to the products list
     # products.append(product)
-    #    ---> We need to return the product
-    #    ---> We need to convert the product to a json string
-    #    ---> We need to return the json string
+    #    ---> I need to return the product
+    #    ---> I need to convert the product to a json string
+    #    ---> I need to return the json string
     db.products.insert_one(product)
 # ---- > Now we are adding the product to the products collection in MongoDB
     print(product)
-    #    ---> We need to print the product
+    #    ---> I need to print the product
     return "Product was added"
-    #    ---> We need to return the product
+    #    ---> I need to return the product
 
 @app.put("/api/products/<int:index>")
 def put_products(index):
     #    ---> Here we need to specify wich element from products list will be updated
     updatedProduct = request.get_json()
-    #    ---> We need to get the updated product from the request
+    #    ---> I need to get the updated product from the request
     if 0<= index < len(products):
-        #    ---> We need to check if the index is valid
+        #    ---> I need to check if the index is valid
         products[index]=updatedProduct
-        #   ---> We need to update the element in the list
+        #   ---> I need to update the element in the list
         return json.dumps(updatedProduct)
-        #    ---> We need to return the updated element
-        #    ---> We need to convert the updated element to a json string
-        #    ---> We need to return the json string
+        #    ---> I need to return the updated element
+        #    ---> I need to convert the updated element to a json string
+        #    ---> I need to return the json string
     else: 
         return "that index does not exist"
-    #    ---> We need to return a message if the index does not exist
+    #    ---> I need to return a message if the index does not exist
     
 # To delete an element from a list, you need to use - pop
 @app.delete("/api/products/<int:index>")
@@ -99,15 +99,15 @@ def delete_products(index):
     #    ---> Here we need to specify wich element from products list will be removed
     if 0<= index < len(products):
         deletedProduct = products.pop(index)
-    #    ---> We need to use the pop method to remove the element from the list
-    #    ---> We need to specify the index of the element that we want to remove
+    #    ---> I need to use the pop method to remove the element from the list
+    #    ---> I need to specify the index of the element that we want to remove
         return json.dumps(deletedProduct)
-    #    ---> We need to return the deleted element
-    #    ---> We need to convert the deleted element to a json string
-    #    ---> We need to return the json string
+    #    ---> I need to return the deleted element
+    #    ---> I need to convert the deleted element to a json string
+    #    ---> I need to return the json string
     else: 
         return "that index does not exist" 
-    #    ---> We need to return a message if the index does not exist
+    #    ---> I need to return a message if the index does not exist
     
 
 
@@ -115,30 +115,30 @@ def delete_products(index):
 def patch_products(index):
     #    ---> Here we need to specify wich element from products list will be updated
     patchProducts = request.get_json()
-    #    ---> We need to get the updated product from the request
+    #    ---> I need to get the updated product from the request
     if 0<= index < len(products):
-        #  ---> We need to check if the index is valid
+        #  ---> I need to check if the index is valid
         products[index].update(patchProducts)
-        #  ---> We need to update the element in the list
+        #  ---> I need to update the element in the list
         return json.dumps(patchProducts)
-        #  ---> We need to return the updated element
-        #  ---> We need to convert the updated element to a json string
-        #  ---> We need to return the json string
+        #  ---> I need to return the updated element
+        #  ---> I need to convert the updated element to a json string
+        #  ---> I need to return the json string
     else:
         return "That index does not exist"
-        #  ---> We need to return a message if the index does not exist
+        #  ---> I need to return a message if the index does not exist
 
 @app.get("/api/product/count")
 def product_count():
     # count = len(products)
     # return jsonify({ "count": count })
     count = db.products.count_documents({}) # This will get the number of elements in the products collection   
-    #    ---> We need to get the number of elements in the products list
-    #    ---> We need to return the number of elements
+    #    ---> I need to get the number of elements in the products list
+    #    ---> I need to return the number of elements
 
     return jsonify({ "count": count })
-    #    ---> We need to convert the number of elements to a json string
-    #    ---> We need to return the json string
+    #    ---> I need to convert the number of elements to a json string
+    #    ---> I need to return the json string
 
 @app.get("/api/catalog/<category>")
 def product_by_category(category):
@@ -147,13 +147,25 @@ def product_by_category(category):
     cursor = db.products.find({"category": category}) # This is a cursor that will go through the products collection
     for product in cursor:
         products_by_cat.append(fix_id(product)) # This will add the product to the products list
-    #    ---> We need to go through each product in the products list
-    #    ---> We need to check if the category of the product matches the category in the request
-    #    ---> We need to add the product to the products list
+    #    ---> I need to go through each product in the products list
+    #    ---> I need to check if the category of the product matches the category in the request
+    #    ---> I need to add the product to the products list
     return json.dumps(products_by_cat)
-    #    ---> We need to return the products list
+    #    ---> I need to return the products list
 
 
+@app.get("/api/categories")
+def get_categories(): # This will get the categories from the products collection
+    # categories = []
+    # for product in products:
+    #     if product["category"] not in categories:
+    #         categories.append(product["category"])    
+    categories = db.products.distinct("category") # This will get the categories from the products collection
+    #    ---> I need to go through each product in the products list
+    #    ---> I need to get the category of the product
+    #    ---> I need to check if the category is not in the categories list
+    #    ---> I need to add the category to the categories list
+    return json.dumps(categories) # This will return the categories list
+    #    ---> I need to return the categories list    
 
-
-app.run(debug=True) # This pass the changes to the server when we savepush
+app.run(debug=True) # This pass the changes to the server when I savepush
