@@ -1,0 +1,14 @@
+1. We need to install the library if virtualenc
+For Mac OS python3 -m pip install virtualenc
+
+For Windows py-m pip install virtualenc
+
+2. Let use this library 
+
+MAC python3 -m venv venv
+python3 = python
+-m means module
+1st venv is the library
+2nd venv is the folder
+ note: cd (change directory) to the folder that you want to use
+WIN py-m venv venv
