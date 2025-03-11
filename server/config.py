@@ -1,9 +1,10 @@
 import pymongo
+from pymongo import MongoClient
 #import certifi  ---> to import the package
 import certifi # #pip install certifi  ---> to install the package
 
-connection_string = "mongodb+srv://qoryhanisagal:<password55>@fsdi-107.sy1tl.mongodb.net/?retryWrites=true&w=majority&appName=fsdi-107"
-
+# connection_string = "mongodb+srv://qoryhanisagal:passwordcohort55@fsdi-107.sy1tl.mongodb.net/?retryWrites=true&w=majority&appName=fsdi-107"
+connection_string = "mongodb+srv://qoryhanisagal:passwordcohort55@fsdi-107.sy1tl.mongodb.net/"
 client = pymongo.MongoClient(connection_string, tlsCAFile=certifi.where())
 # client = pymongo.MongoClient(connection_string)
 # client = pymongo.MongoClient(connection_string, tlsCAFile=certifi.where())
@@ -24,3 +25,5 @@ db = client.get_database("organika")
 # #if the database does not exist, it will be created
 # #if the database exists, it will be used
 # #the database is created when we insert the first document
+
+products_collection = db["products"]
