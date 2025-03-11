@@ -18,12 +18,12 @@ client = pymongo.MongoClient(connection_string, tlsCAFile=certifi.where())
 # #tlsCAFile=certifi.where()  ---> to use the certificate                                                                                           
 db = client.get_database("organika")
 #db = client.get_database("organika")
-# #we need to specify the database
-# #we can use an existing database or create a new one
-# #in this case, we are using an existing database
+# #I need to specify the database
+# #I can use an existing database or create a new one
+# #in this case, I are using an existing database
 # #the database is called organika
 # #if the database does not exist, it will be created
 # #if the database exists, it will be used
-# #the database is created when we insert the first document
+# #the database is created when I insert the first document
 
 products_collection = db["products"]
