@@ -38,7 +38,7 @@ def fix_id(obj):
     obj["_id"] = str(obj["_id"])
     return obj
 
-@app.get("/api/products")
+@app.get("/api/catalog")
 def get_products():
 # ---- > Now we are returning the products list from MongoDB
 # ---- > I are converting the ObjectId to a string
@@ -57,10 +57,10 @@ def get_products():
 # This is an endpoint that will return a string
     # return json.dumps(products)
 # This is an endpoint that will return a string
-# when the user goes to the /api/products page
+# when the user goes to the /api/catalog page
 # This is the same as the products.json file 
 
-@app.post("/api/products")
+@app.post("/api/catalog")
 def post_products():
     #    ---> Here we need to get the product from the request
     product = request.get_json()
@@ -76,7 +76,7 @@ def post_products():
     return "Product was added"
     #    ---> I need to return the product
 
-@app.put("/api/products/<int:index>")
+@app.put("/api/catalog/<int:index>")
 def put_products(index):
     #    ---> Here we need to specify wich element from products list will be updated
     updatedProduct = request.get_json()
@@ -94,7 +94,7 @@ def put_products(index):
     #    ---> I need to return a message if the index does not exist
     
 # To delete an element from a list, you need to use - pop
-@app.delete("/api/products/<int:index>")
+@app.delete("/api/catalog/<int:index>")
 def delete_products(index):
     #    ---> Here we need to specify wich element from products list will be removed
     if 0<= index < len(products):
@@ -111,7 +111,7 @@ def delete_products(index):
     
 
 
-@app.patch("/api/products/<int:index>")
+@app.patch("/api/catalog/<int:index>")
 def patch_products(index):
     #    ---> Here we need to specify wich element from products list will be updated
     patchProducts = request.get_json()
@@ -128,7 +128,7 @@ def patch_products(index):
         return "That index does not exist"
         #  ---> I need to return a message if the index does not exist
 
-@app.get("/api/product/count")
+@app.get("/api/catalog/count")
 def product_count():
     # count = len(products)
     # return jsonify({ "count": count })
@@ -140,7 +140,7 @@ def product_count():
     #    ---> I need to convert the number of elements to a json string
     #    ---> I need to return the json string
 
-@app.get("/api/catalog/<category>")
+@app.get("/api/products/<category>")
 def product_by_category(category):
     products_by_cat = []
     # for product in products:
@@ -167,5 +167,21 @@ def get_categories(): # This will get the categories from the products collectio
     #    ---> I need to add the category to the categories list
     return json.dumps(categories) # This will return the categories list
     #    ---> I need to return the categories list    
+
+@app.get("/api/reports/total")
+def get_total_catalog_value(): 
+    # This will get the total value of the products in the products collection
+    total = 0
+    cursor = db.products.find({}) 
+    # This is a cursor that will go through the products collection
+    for product in cursor:
+        total += float(product.get("price", 0)) 
+        # This will get the price of the product and add it to the total
+    #    ---> I need to go through each product in the products list
+    #    ---> I need to get the price of the product
+    #    ---> I need to add the price to the total
+    return json.dumps({"total": total}) 
+# This will return the total value of the products in the products collection
+    #    ---> I need to return the total value of the products  
 
 app.run(debug=True) # This pass the changes to the server when I savepush
