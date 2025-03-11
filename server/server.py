@@ -180,7 +180,7 @@ def get_total_catalog_value():
     #    ---> I need to go through each product in the products list
     #    ---> I need to get the price of the product
     #    ---> I need to add the price to the total
-    return json.dumps({"total": total}) 
+    return json.dumps({"total": round(total, 2)}) 
 # This will return the total value of the products in the products collection
     #    ---> I need to return the total value of the products  
 
