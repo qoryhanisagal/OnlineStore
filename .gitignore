@@ -1,1 +1,19 @@
+# Bytecode & Cache
+__pycache__/
+*.pyc
+
+# macOS system files
+.DS_Store
+
+# Python virtual environment
+venv/
+
+# VS Code settings
+.vscode/
+
+/cozy_tea_shop/node_modules/
+/server/venv/
+/venv/
+/finalreport/
 stat
+
