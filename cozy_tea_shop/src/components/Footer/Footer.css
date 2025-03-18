@@ -1,0 +1,122 @@
+.footer {
+    width: 100%;
+    overflow-x: hidden;
+    box-sizing: border-box;
+    background-color: #0e465a;
+    color: #fff;
+    padding: 40px 60px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 40px;
+    font-family: 'Montserrat', sans-serif;
+  }
+  
+  .footer-section {
+    flex: 1;
+    min-width: 250px;
+  }
+  
+  .footer-section.left {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 16px;
+    text-align: left;
+  }
+
+  .footer-section.center {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    max-width: 300px;
+    gap: 30px;
+  }
+
+  .newsletter-row {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 16px;
+    width: 100%;
+    max-width: 500px;
+  }
+  
+  .newsletter-text {
+    margin-bottom: 20px;
+    font-size: 16px;
+  }
+  
+  .footer-logo {
+    font-family: "Vampiro One", cursive;
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  .social-icons i {
+    font-size: 24px;
+    margin-right: 12px;
+    cursor: pointer;
+  }
+
+  .footer-input {
+    flex: 1;
+    min-width: 200px;
+    padding: 10px;
+    border: none;
+    border-bottom: 1px solid white;
+    background-color: transparent;
+    color: white;
+    font-size: 16px;
+    font-family: 'Montserrat', sans-serif;
+    outline: none;
+  }
+  
+  .subscribe-button {
+    white-space: nowrap;
+    padding: 10px 20px;
+    font-size: 14px;
+    border: 1px solid white;
+    border-radius: 8px;
+    background: transparent;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    flex-shrink: 0;
+  }
+  
+  .footer-links {
+    display: flex;
+    gap: 60px;
+    justify-content: flex-start;
+    text-align: left;
+  }
+  
+  .footer-links ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 8px;
+    text-align: left;
+  }
+  
+  .footer-links li {
+    margin-bottom: 8px;
+    cursor: pointer;
+  }
+  
+  .footer-links li:hover {
+    text-decoration: underline;
+  }
+
+  @media (max-width: 600px) {
+    .newsletter-row {
+      flex-wrap: wrap;
+    }
+  
+    .subscribe-button {
+      width: 100%;
+      margin-top: 10px;
+    }
+  }
