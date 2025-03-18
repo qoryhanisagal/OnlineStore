@@ -10,3 +10,8 @@ venv/
 
 # VS Code settings
 .vscode/
+
+/cozy_tea_shop/node_modules/
+/server/venv/
+/venv/
+/finalreport/

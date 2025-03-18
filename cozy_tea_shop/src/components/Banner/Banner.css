@@ -1,0 +1,17 @@
+.banner {
+    background-color: #0e465a;
+    width: 100%;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+  
+  .banner-text {
+    color: #ffffff;
+    font-size: 18px;
+    font-family: 'Corben', sans-serif;
+    text-align: center;
+    line-height: 28px;
+  }
