@@ -1,3 +1,4 @@
+* Container for the quantity picker — center-aligned flex row with spacing */
 .quantity-picker {
   display: flex;
   align-items: center;
@@ -6,6 +7,7 @@
   margin-bottom: 10px;
 }
 
+/* Styling for the minus and plus buttons — large, clickable, and animated */
 .quantity-picker button {
   border: none;
   background: none;
@@ -16,10 +18,12 @@
   transition: transform 0.2s ease;
 }
 
+/* Hover effect: scale the button slightly to give it a responsive feel */
 .quantity-picker button:hover {
   transform: scale(1.2);
 }
 
+/* Number label between the buttons — centered and bold */
 .quantity-picker label {
   font-size: 18px;
   font-weight: 600;
