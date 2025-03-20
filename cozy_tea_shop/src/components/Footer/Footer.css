@@ -1,7 +1,7 @@
-/ * Footer.css - Styles for the site footer including layout, newsletter, branding, social icons, and link sections.
+ /* Footer.css - Styles for the site footer including layout, newsletter, branding, social icons, and link sections.
    I'm using a responsive flexbox layout with clearly scoped sections (left, center, right) and styling consistency
    with the rest of the site. Most of the design follows the Cozy Tea Shop branding using #0e465a and white.
-   */
+  */
   
   /* Main footer container with responsive spacing and color */
   .footer {
