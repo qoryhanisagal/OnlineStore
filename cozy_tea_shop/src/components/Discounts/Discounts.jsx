@@ -26,7 +26,7 @@ function Discounts() {
     <div className="admin-card p-4 shadow-sm">
       <h4 className="text-center mb-3">Add a Discount Code</h4>
 
-      // Input field: Code
+      {/*  Input field: Code */}
       <div className="form-group">
         <label>Code</label>
         <input 
@@ -37,7 +37,7 @@ function Discounts() {
         />
       </div>
 
-      // Input field: Code Category
+      {/* Input field: Code Category */}
       <div className="form-group">
         <label>Code Category</label>
         <input 
@@ -48,7 +48,7 @@ function Discounts() {
         />
       </div>
 
-      // Input field: Discount (%)
+      {/* Input field: Discount (%) */}
       <div className="form-group">
         <label>Discount (%)</label>
         <input 
@@ -59,7 +59,7 @@ function Discounts() {
         />
       </div>
 
-      // Input field: Discount Type
+      {/* Input field: Discount Type */}
       <div className="form-group">
         <label>Discount Type</label>
         <select 
@@ -73,7 +73,7 @@ function Discounts() {
         </select>
       </div>
 
-      // Submit button triggers the save function and uses shared 'save-btn' style
+      {/* Submit button triggers the save function and uses shared 'save-btn' style */}
       <button className="btn save-btn w-100 mt-2" onClick={save}>
         Save
       </button>
