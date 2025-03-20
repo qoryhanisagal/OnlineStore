@@ -1,0 +1,30 @@
+/* Admin.css - Controls layout and spacing for the Admin Dashboard page */
+
+/* Container for overall page padding */
+.admin-dashboard {
+    padding: 20px;
+}
+
+/* Flex container to layout ProductAdmin and Discounts side by side */
+.admin-sections {
+    display: flex;
+    gap: 30px; /* space between left and right */
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+/* Both sections are flexible to grow/shrink as needed */
+.admin-left,
+.admin-right {
+    flex: 1;
+}
+
+/* ProductAdmin section takes up more space */
+.admin-left {
+    width: 60%;
+}
+
+/*Discounts section takes up slightly less space */
+.admin-right {
+    width: 35%;
+}
