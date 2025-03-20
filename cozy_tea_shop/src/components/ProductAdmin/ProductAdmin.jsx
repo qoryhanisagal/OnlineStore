@@ -1,6 +1,7 @@
-// Admin panel that allows administrators to input and save new product data.
 import { useState } from "react";
 import "../../styles/AdminForm.css";
+
+function ProductAdmin() {
 
 // Track input value for Title
 const [title, setTitle] = useState("");
@@ -16,14 +17,13 @@ const [category, setCategory] = useState("");
 
 // Handles form submission by logging the product details to the console
 function save() {
-  console.log("Saving product:");
-  console.log("Title:", title);
-  console.log("Price:", price);
-  console.log("Image URL:", image);
-  console.log("Category:", category);
+console.log("Saving product:");
+console.log("Title:", title);
+console.log("Price:", price);
+console.log("Image URL:", image);
+console.log("Category:", category);
 }
 
-function ProductAdmin() {
   // Render the admin product form with shared styles
   return (
     <div className="admin-card p-4 shadow-sm">
