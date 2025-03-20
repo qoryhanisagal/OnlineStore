@@ -1,3 +1,4 @@
+/* Navbar list: horizontal layout with no bullets and no padding */
 
 .navbar ul {
     display: flex;
@@ -5,16 +6,21 @@
     padding: 0;
 }
 
+/* Each navbar item: fixed width and horizontal spacing */
+
 .navbar ul li{
         width: 60px;
         margin: 0 10px;
 }
 
+/* Hover effect: change color and make text bold when hovering over a nav item */
 .navbar ul li:hover{
     color: teal;
     font-weight: bold;
     cursor: pointer
 }
+
+/* Main navbar container: dark background with flex layout and spacing */
 .navbar{
     background-color: #333;
     color: white;
@@ -24,6 +30,7 @@
     justify-content: space-between; 
 }
 
+/* Brand title styling: bold, white text using Vampiro One font */
 .navbar .title{
     font-weight: bold;
     color:  white;
