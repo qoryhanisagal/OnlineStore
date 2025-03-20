@@ -1,14 +1,28 @@
-1. We need to install the library if virtualenc
-For Mac OS python3 -m pip install virtualenc
+# Virtual Environment Setup Notes
 
-For Windows py-m pip install virtualenc
+1. Install the virtualenv library:
+   - **Mac OS**: 
+     ```bash
+     python3 -m pip install virtualenv
+     ```
+   - **Windows**:
+     ```bash
+     py -m pip install virtualenv
+     ```
 
-2. Let use this library 
+2. Create a virtual environment using the installed library:
+   - **Mac OS**:
+     ```bash
+     python3 -m venv venv
+     ```
+     - `python3`: Refers to the Python interpreter
+     - `-m`: Runs a library module as a script
+     - First `venv`: The module being run
+     - Second `venv`: The name of the environment folder created
+     - **Note**: Make sure you `cd` into the project folder before running this.
+   - **Windows**:
+     ```bash
+     py -m venv venv
+     ```
 
-MAC python3 -m venv venv
-python3 = python
--m means module
-1st venv is the library
-2nd venv is the folder
- note: cd (change directory) to the folder that you want to use
-WIN py-m venv venv
+These instructions help keep the Python dependencies organized and avoid global installation issues.

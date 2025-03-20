@@ -120,7 +120,4 @@ I have submitted both a `.zip` file and a GitHub URL for my final RESTful API pr
 [https://github.com/qoryhanisagal/online-store-api/tree/final-report](https://github.com/qoryhanisagal/online-store-api/tree/final-report)
 
 📄 **Final Report File Location:**  
-`OnlineStore/finalreport/FSDI_107_Final_Report.md`
-
-This Markdown file provides a full breakdown of the API implementation, matching all required competencies.  
-Please let me know if you have any trouble accessing the files.
+`OnlineStore/finalreport/FSDI_107_108_Final_Report.md`
