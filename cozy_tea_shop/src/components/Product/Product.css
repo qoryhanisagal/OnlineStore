@@ -1,21 +1,87 @@
+/* Notes: Rethink this design — does not look good */
+/* Container for each product card */
 .product {
-    border: 1px solid #e1e1e1;
-    display: inline-block;
-    width: 250px;
-    margin-right: 12px;
-    margin-bottom: 12px;
-    padding: 10px;
-    width: 320px;
-    height: 250px;
+    width: 220px;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     text-align: center;
-    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5);
-}
+    background-color: white;
+    transition: transform 0.3s ease;
+  }
+  
+  .product:hover {
+    transform: translateY(-5px);
+  }
+  
+  /* Product image */
+  .product img {
+    width: 120px;
+    height: auto;
+    margin-bottom: 15px;
+    object-fit: contain;
+  }
+  
+  /* Title */
+  .product h5 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: #333;
+  }
+  
+  /* Price display */
+  .prices {
+    display: flex;
+    flex-direction: column;
+    margin: 10px 0;
+    gap: 5px;
+  }
+  
+  .total {
+    font-size: 1.1rem;
+    font-weight: 500;
+    color:#0e465a;
+  }
+  
+  .unit {
+    font-size: 0.9rem;
+    color: #777;
+  }
+  
+  /* When quantity > 1 */
+  .highlight-total {
+    color: green;
+    font-weight: bold;
+  }
+  
+  /* Controls (Quantity Picker wrapper) */
+  .controls {
+    margin: 15px 0;
+  }
+  
+  /* Add to bag button */
+  .add-btn {
+    background-color: #0e465a;
+    color: white;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-weight: 500;
+  }
+  
+  .add-btn:hover {
+    background-color: #09303e;
+    transform: scale(1.02);
+  }
 
-.product h5 {
-    margin: 0;
-    padding: 0;
-    font-size: 1.5em;
-    font-weight: 400;
-    color: darkcyan;
-    text-align: center;
-}
+  @media (max-width: 600px) {
+    .product {
+      width: 100%;
+      max-width: 300px;
+      margin: 0 auto;
+    }
+  }
+  
