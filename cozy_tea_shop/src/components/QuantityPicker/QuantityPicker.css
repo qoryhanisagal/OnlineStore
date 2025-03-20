@@ -1,8 +1,28 @@
-.quantity-picker label {
-  display: block;
-  font-size: 1.5rem;
+.quantity-picker {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.quantity-picker button {
+  border: none;
+  background: none;
+  font-size: 24px;
   font-weight: bold;
-  margin-bottom: 0.5rem;
-  margin-left: 5px;
-  margin-right: 5px;
+  color: #333;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.quantity-picker button:hover {
+  transform: scale(1.2);
+}
+
+.quantity-picker label {
+  font-size: 18px;
+  font-weight: 600;
+  min-width: 20px;
+  text-align: center;
 }
