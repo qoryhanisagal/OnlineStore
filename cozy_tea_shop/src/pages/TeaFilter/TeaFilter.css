@@ -1,0 +1,36 @@
+/**** TeaFilter.css
+     This stylesheet styles the TeaFilter page layout including the filter buttons and the product display grid.
+     Used in the TeaFilter.jsx component to control spacing, font, and responsive grid behavior.
+****/
+/* Main wrapper for the TeaFilter page content */
+.tea-filter-page {
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    font-family: "Montserrat", sans-serif;
+  }
+  
+/* Page title */
+.tea-filter-page h1 {
+  font-size: 28px;
+  color: #0e465a;
+  margin-bottom: 30px;
+}
+
+/* Section for displaying category filter buttons */
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 40px;
+}
+
+/* Responsive grid layout for filtered tea product cards */
+.productlist {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 30px;
+  justify-items: center;
+  padding: 0 10px;
+}
