@@ -1,0 +1,95 @@
+/**** AdminForm.css - Shared styles for admin input forms including layout, card styling, and buttons.
+     Used by components like ProductAdmin and Discounts to maintain a consistent visual design.
+  */
+
+/* Main flex layout that splits admin content into left and right panels */
+.admin-sections {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap; /* Makes it responsive on smaller screens */
+    margin-top: 30px;
+    
+  }
+  
+
+/* Layout rules to allow flexible, centered content in both left and right admin sections */
+.admin-left,
+.admin-right {
+    flex: 1 1 400px; /* grow/shrink with min width */
+    display: flex;
+    justify-content: center;
+
+  }
+
+/* Card container style used for all admin form panels */
+.admin-card {
+    background-color: #f9f9f9;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    max-width: 450px;
+    width: 100%;
+  }
+  
+/* Styling for the card heading including color and spacing */
+.admin-card h4 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-weight: 600;
+    color: #0e465a;
+  }
+  
+  
+/* Margin spacing between each input group */
+.form-group {
+    margin-bottom: 15px;
+  }
+  
+
+/* Styling for all labels inside the form */
+.form-group label {
+    font-weight: 500;
+    display: block;
+    margin-bottom: 6px;
+    color: #333;
+  }
+  
+
+/* Shared styling for input fields across admin forms */
+.form-control {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #ced4da;
+    border-radius: 6px;
+    font-size: 15px;
+  }
+  
+
+/* Base save button style with custom color, padding, and font */
+.btn.save-btn {
+    background-color: #0e465a;
+    color: white;
+    font-weight: 500;
+    border: none;
+    padding: 10px 16px;
+    width: 100%;
+    border-radius: 8px;
+    font-size: 16px;
+    margin-top: 10px;
+    transition: background-color 0.3s ease;
+  }
+  
+
+/* Save button hover effect with darker background */
+.btn.save-btn:hover {
+    background-color: #08303e;
+  }
+
+
+/* Save button hover effect with darker background */
+.btn.save-btn:hover {
+    background-color: #0e465a !important;
+    border-color: #0e465a !important;
+    color: white !important;
+  }
