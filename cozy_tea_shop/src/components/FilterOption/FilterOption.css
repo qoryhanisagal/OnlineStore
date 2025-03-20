@@ -1,0 +1,23 @@
+/* Base button style for all filter options */
+.filter-option {
+  padding: 8px 16px;
+  border: 1px solid #0e465a;
+  background-color: white;
+  color: #0e465a;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.2s ease-in-out;
+}
+
+/* Hover effect to flip background and text color */
+.filter-option:hover {
+  background-color: #0e465a;
+  color: white;
+}
+
+/* When the button is active (currently selected) */
+.filter-option.active {
+  background-color: #0e465a;
+  color: white;
+}
