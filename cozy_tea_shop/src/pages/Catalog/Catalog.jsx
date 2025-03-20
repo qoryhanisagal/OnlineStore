@@ -1,4 +1,3 @@
-{ /* Catalog.jsx - Page that displays a list of all available tea products using mock data. */}
 import Product from "../../components/Product/Product";
 import "./Catalog.css";
 
