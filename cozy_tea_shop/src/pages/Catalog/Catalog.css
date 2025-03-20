@@ -1,18 +1,21 @@
-.catalog{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    margin: 0 auto;
-    max-width: 1200px;
-    padding: 0 15px;
-}
+/* Catalog.css - Styles for the product catalog page layout and product grid*/
 
-catalog h1{
-    font-size: 2em;
-    font-weight: bold;
-    margin: 0;
-    padding: 0;
+  /* Outer container for the catalog page with padding and center alignment */
+.catalog {
+    padding: 40px;
     text-align: center;
-    width: 100%;
-    color: darkcyan
-}
+  }
+  
+  /* Main heading style for the catalog title */
+  .catalog h1 {
+    font-size: 28px;
+    margin-bottom: 40px;
+  }
+  
+  /* Grid layout for displaying all products responsively */
+  .productlist {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 30px;
+    justify-items: center;
+  }
