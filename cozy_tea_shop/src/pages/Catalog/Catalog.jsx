@@ -1,4 +1,4 @@
-// Catalog.jsx - Page that displays a list of all available tea products using mock data.
+{ /* Catalog.jsx - Page that displays a list of all available tea products using mock data. */}
 import Product from "../../components/Product/Product";
 import "./Catalog.css";
 
@@ -92,17 +92,20 @@ const mockData = [
 
 function Catalog() {
   return (
-    {/* Container for the entire catalog page */}
-    <div className="catalog">
-      {/* Catalog heading */}
-      <h1>Check out our amazing catalog!</h1>
-      {/* Grid of all Product components mapped from mock data */}
-      <div className="productlist">
-        {mockData.map((item) => (
-          <Product key={item._id} data={item} />
-        ))}
+    <>
+      {/* Container for the entire catalog page */}
+      <div className="catalog">
+        {/* Catalog heading */}
+        <h1>Check out our amazing catalog!</h1>
+  
+        {/* Grid of all Product components mapped from mock data */}
+        <div className="productlist">
+          {mockData.map((item) => (
+            <Product key={item._id} data={item} />
+          ))}
+        </div>
       </div>
-    </div>
+    </>
   );
 }
 
