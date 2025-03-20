@@ -1,7 +1,6 @@
-# 📦 Online Store API
+🫖 Cozy Tea Shop – Full Stack Online Stor
 
-A simple Flask + MongoDB REST API for managing product data.
-
+A full-stack web application for a cozy tea shop, featuring a React frontend, a Flask + MongoDB backend, and an admin dashboard for managing products and discoun
 ---
 
 ## 👩🏽‍💻 Submitted By
@@ -12,6 +11,16 @@ A simple Flask + MongoDB REST API for managing product data.
 ---
 
 ## 🛠️ Tech Stack
+
+🔹 Frontend
+
+- React (Vite)
+- Bootstrap 5
+- Font Awesome
+- Custom CSS (modular + global)
+
+🔹 Backend
+
 - Python 3.13
 - Flask
 - MongoDB Atlas (cloud-hosted)
@@ -22,21 +31,37 @@ A simple Flask + MongoDB REST API for managing product data.
 
 ## 📄 Project Structure
 
+```
 OnlineStore/
-├── server/
-│   ├── config.py             # MongoDB connection
-│   ├── server.py             # Flask app
-│   ├── pages/                # HTML Pages for templates
-│   │   ├── index.html
-│   │   └── about.html
-│   └── mockdata/
-│       └── organika.products.json  # Mock product data
+├── client/                    # React Frontend
+│   ├── src/
+│   │   ├── components/        # Reusable UI components (e.g., Banner, Navbar, Product)
+│   │   ├── pages/             # Page-level views (Catalog, About, AdminDashboard)
+│   │   ├── styles/            # Shared global CSS (AdminForm.css, etc.)
+│   │   ├── App.jsx            # Main app structure
+│   │   └── main.jsx           # Entry point for Vite
+│   └── public/img/            # Product images (e.g., blacktea.png, greentea.png)
+├── server/                    # Flask Backend
+│   ├── config.py              # MongoDB config
+│   ├── server.py              # Flask app routes
+│   ├── pages/                 # HTML templates
+│   └── mockdata/              # JSON mock data
 ├── README.md
-
-
+└── notes.txt                  # Project implementation and setup notes
+```
 ---
 
-## 🌐 Web Routes
+## 🌐 Frontend Routes
+- / → Renders all major components:
+- Banner
+- Navbar
+- Catalog (product listing)
+- TeaFilter (category filtering)
+- About
+- Admin Dashboard (Product + Discount forms)
+- Footer
+
+## 🔌 Backend API Endpoints
 
 - `GET /` → Renders the homepage (`index.html`)
 - `GET /about` → Renders the about page (`about.html`)
@@ -53,13 +78,18 @@ OnlineStore/
 
 ---
 
-## 📥 Mock Data
+## 🧪 Testing & Mock Data
 
 The mock product data is stored in:
 
 ``
-server/mockdata/organika.products.json
+server/mockdata/organika.products.json(See MongDB Compass)
 ``
+
+To load into MongoDB Atlas:
+	1.	Open MongoDB Compass
+	2.	Connect to your cluster
+	3.	Import the JSON file into the correct collection
 
 You can import this into your MongoDB Atlas collection using **MongoDB Compass**:
 1. Connect to your cluster
@@ -69,10 +99,17 @@ You can import this into your MongoDB Atlas collection using **MongoDB Compass**
 
 ---
 
+## 💡 Development Notes
+- Used virtualenv for Python environment management
+- Created a shared AdminForm.css for consistent form styling
+- Applied responsive layouts using Bootstrap’s flex utility classes
+- Converted inline styling into reusable CSS classes for scalability
+- FilterOption component was added for category filtering via buttons
+
 ## 📬 Final Report Submission Note
 
-- `seed_db.py` was removed in favor of manual mock data import via Compass.
 - Thunder Client was used to verify all API endpoints.
+- Removed `seed_db.py` – switched to manual import using Compass
 - Be sure MongoDB Atlas is seeded before testing `/api/catalog/<category>`.
 
 ---
