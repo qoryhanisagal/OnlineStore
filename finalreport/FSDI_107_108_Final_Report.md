@@ -11,10 +11,12 @@ The Product Catalog RESTful API is a backend application built using Python (Fla
 
 This project demonstrates my proficiency in Python, REST API development, Flask, MongoDB, and Git while solidifying my understanding of routing, JSON handling, data modeling, and server-side logic.
 
+ - 🔧 Note: In addition to the backend, I also created a working React frontend to visually render products, filter them by category, and experiment with client-side state and layout.
 ---
 
 ## 2️⃣ Technologies Used
 
+🔹 Backend
 - **Python 3.13** – Core programming language
 - **Flask** – Web framework for building the API
 - **MongoDB Atlas** – Cloud database for storing product data
@@ -22,6 +24,12 @@ This project demonstrates my proficiency in Python, REST API development, Flask,
 - **Thunder Client (VS Code Extension)** – For API testing
 - **Git & GitHub** – For version control and project collaboration
 
+
+🔹 Frontend (Added as an extension)
+- React (Vite) – Lightweight build tool and React renderer
+- Bootstrap & Font Awesome – Styling and iconography
+- CSS Modules – Custom layout and reusable styling
+- React Hooks – State management for filters and forms
 ---
 
 ## 3️⃣ Features Implemented
@@ -66,13 +74,13 @@ This project demonstrates my proficiency in Python, REST API development, Flask,
 
 After implementing and testing all routes, the RESTful Product Catalog API now:
 
-✅ Returns a welcome page and about page  
-✅ Provides a full list of products and allows new product creation  
-✅ Filters products by category using dynamic route parameters  
-✅ Returns the total value of the catalog  
-✅ Uses MongoDB Atlas and Compass for persistent data management  
-✅ Is tested through Thunder Client and documented on GitHub  
-
+- ✅ Returns a welcome page and about page  
+- ✅ Provides a full list of products and allows new product creation  
+- ✅ Filters products by category using dynamic route parameters  
+- ✅ Returns the total value of the catalog  
+- ✅ Uses MongoDB Atlas and Compass for persistent data management  
+- ✅ Is tested through Thunder Client and documented on GitHub  
+- ✅ (Extended) Has a working frontend that consumes the /api/catalog and /api/products/<category> routes to render and filter products
 ---
 
 ## 6️⃣ GitHub Repository
@@ -89,8 +97,8 @@ Though the core competencies have been met, I plan to enhance the project with t
 2. **Error Handling:** Add consistent error messages for edge cases and bad requests  
 3. **Authentication:** Introduce token-based authentication to protect routes  
 4. **Deployment:** Deploy the API to a live cloud environment (e.g., Render or Heroku)  
-5. **Frontend Integration:** Build a simple frontend client using React to consume this API
-
+5. **Frontend Integration:** Expand the React UI to support editing/deleting products, better layout, and UX improvements.
+6. Admin Dashboard (React): Maintain admin-only controls for discounts and inventory via separate components
 ---
 
 ## 8️⃣ Conclusion
@@ -101,7 +109,8 @@ This project deepened my understanding of:
 ✅ Working with JSON data and Python dictionaries  
 ✅ MongoDB data modeling and real-time filtering  
 ✅ Using Flask and pymongo to build scalable backends  
+✅ React hooks and frontend rendering
 ✅ GitHub version control, clean commits, and branching
 
 🚀 **Final Verdict:**  
-This RESTful API project fulfills all course requirements and successfully demonstrates my mastery of backend development using Flask and MongoDB.
+This RESTful API project fulfills all course requirements and successfully demonstrates my mastery of backend development using Flask and MongoDB — and serves as the foundation for a full-stack product catalog system.
