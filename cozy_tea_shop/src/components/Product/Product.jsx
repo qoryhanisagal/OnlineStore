@@ -3,9 +3,13 @@ import "./Product.css";
 // The "Add to Bag" button and product images are not uniform in size or layout.
 // Consider creating a separate TeaCard component for better reusability and styling control.
 import QuantityPicker from "../QuantityPicker";
-import { useState } from "react";
+import { useState, useContext } from "react";
+import { CartContext } from "../../context/CartContext";
 
 function Product(props) {
+  // I'm pulling from the cartcontext
+  const { addToCart } = useContext(CartContext);
+
   // I'm using React state to track the quantity selected for this product
   const [quantity, setQuantity] = useState(1);
 
@@ -22,6 +26,13 @@ function Product(props) {
 
   // Calculate the total cost based on selected quantity and unit price
   const total = (props.data.price * quantity).toFixed(2);
+  function add() {
+    const productToAdd = {
+      ...props.data,
+      quantity: quantity,
+    };
+    addToCart(productToAdd); // Send the product to cart context
+  }
 
   return (
     <>
