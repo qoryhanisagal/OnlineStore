@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Home from "./pages/Home/Home";
 import Banner from "./components/Banner";
 import Navbar from "./components/Navbar";
+import Cart from './pages/Cart/cart';
 import Catalog from "./pages/Catalog/Catalog";
 import TeaFilter from "./pages/TeaFilter/TeaFilter";
 import About from "./pages/About/About";
@@ -14,7 +15,7 @@ import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.min.js';
 
-// import 'bootstrap-icons/font/bootstrap-icons.css'; 
+import 'bootstrap-icons/font/bootstrap-icons.css'; 
 import '@fortawesome/fontawesome-free/css/all.css';
 
 function App() {
@@ -35,6 +36,9 @@ function App() {
       <Routes>
         {/* HomePage - Home Splash Page */}
        <Route path="/" element={<Home />} />
+
+        {/* My Shoppping Bag Page */}
+       <Route path="/cart" element={<Cart />} />
 
         {/* Catalog Page - showcases all tea products */}
         <Route path='/catalog' element={<Catalog />} />
