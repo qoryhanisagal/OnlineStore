@@ -4,8 +4,10 @@
 // Importing admin components
 import ProductAdmin from "../../components/ProductAdmin/ProductAdmin";
 import Discounts from "../../components/Discounts/Discounts";
+
 // Page-specific layout styles
 import "./Admin.css";
+
 // Shared styles for admin form cards and fields
 import "../../styles/AdminForm.css";
 
