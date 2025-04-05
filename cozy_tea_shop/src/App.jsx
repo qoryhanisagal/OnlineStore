@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Home from "./pages/Home/Home";
 import Banner from "./components/Banner";
 import Navbar from "./components/Navbar";
+import Profile from "./pages/Profile/Profile";
 import Cart from './pages/Cart/cart';
 import Catalog from "./pages/Catalog/Catalog";
 import TeaFilter from "./pages/TeaFilter/TeaFilter";
@@ -32,7 +33,8 @@ function App() {
       {/* Navigation bar - sits below the banner for easy page navigation */}
       <Navbar />
 
-      {/* Main route container */ }
+      {/* Main content area - where the main page components are rendered */}
+
       <Routes>
         {/* HomePage - Home Splash Page */}
        <Route path="/" element={<Home />} />
@@ -48,6 +50,9 @@ function App() {
 
       {/* About Page - displays author name, email, and message interaction */}
         <Route path="/about" element={<About />} />
+
+      {/* Profile Page - user profile and settings */}
+      <Route path="/profile" element={<Profile />} />
 
       {/* Admin Dashboard - contains product and discount forms for admin users */}
         <Route path="/admin" element={<Admin />} />
