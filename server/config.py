@@ -16,7 +16,7 @@ client = pymongo.MongoClient(connection_string, tlsCAFile=certifi.where())
 # #tlsCAFile=certifi.where()
 # #certifi is a package that provides the certificate
 # #tlsCAFile=certifi.where()  ---> to use the certificate                                                                                           
-db = client.get_database("organika")
+db = client.get_database("cozyteashop")
 #db = client.get_database("organika")
 # #I need to specify the database
 # #I can use an existing database or create a new one

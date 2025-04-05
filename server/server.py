@@ -154,19 +154,30 @@ def product_by_category(category):
     #    ---> I need to return the products list
 
 
+# @app.get("/api/categories")
+# def get_categories(): # This will get the categories from the products collection
+#     # categories = []
+#     # for product in products:
+#     #     if product["category"] not in categories:
+#     #         categories.append(product["category"])    
+#     categories = db.products.distinct("category") # This will get the categories from the products collection
+#     #    ---> I need to go through each product in the products list
+#     #    ---> I need to get the category of the product
+#     #    ---> I need to check if the category is not in the categories list
+#     #    ---> I need to add the category to the categories list
+#     return json.dumps(categories) # This will return the categories list
+#     #    ---> I need to return the categories list    
+
 @app.get("/api/categories")
-def get_categories(): # This will get the categories from the products collection
-    # categories = []
-    # for product in products:
-    #     if product["category"] not in categories:
-    #         categories.append(product["category"])    
-    categories = db.products.distinct("category") # This will get the categories from the products collection
-    #    ---> I need to go through each product in the products list
-    #    ---> I need to get the category of the product
-    #    ---> I need to check if the category is not in the categories list
-    #    ---> I need to add the category to the categories list
-    return json.dumps(categories) # This will return the categories list
-    #    ---> I need to return the categories list    
+def get_categories():
+    categories = []  # Initialize empty list to hold unique categories
+
+    for product in products:  # Loop through each product in the products list
+        if product["category"] not in categories:  # Check if category is already in the list
+            categories.append(product["category"])  # If not, add it
+
+    return json.dumps(categories)  # Return the unique list as a JSON string
+
 
 @app.get("/api/reports/total")
 def get_total_catalog_value(): 
@@ -180,7 +191,10 @@ def get_total_catalog_value():
     #    ---> I need to go through each product in the products list
     #    ---> I need to get the price of the product
     #    ---> I need to add the price to the total
-    return json.dumps({"total": round(total, 2)}) 
+    return json.dumps({
+    "message": "Total catalog value calculated successfully.",
+    "total": round(total, 2)
+})
 # This will return the total value of the products in the products collection
     #    ---> I need to return the total value of the products  
 
