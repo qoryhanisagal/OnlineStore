@@ -83,7 +83,7 @@ OnlineStore/
 The mock product data is stored in:
 
 ``
-server/mockdata/organika.products.json(See MongDB Compass)
+server/mockdata/cozyteashop.products.json(See MongDB Compass)
 ``
 
 To load into MongoDB Atlas:
@@ -93,7 +93,7 @@ To load into MongoDB Atlas:
 
 You can import this into your MongoDB Atlas collection using **MongoDB Compass**:
 1. Connect to your cluster
-2. Select the `organika.products` collection
+2. Select the `cozyteashop.products` collection
 3. Use "Add Data → Insert Document" or Import JSON
 4. Ensure fields include `"title"`, `"price"`, and `"category"`
 
@@ -101,6 +101,10 @@ You can import this into your MongoDB Atlas collection using **MongoDB Compass**
 
 ## 💡 Development Notes
 - Used virtualenv for Python environment management
+- Activate Environment from OnlineStore
+```bash
+source venv/bin/activate
+```
 - Created a shared AdminForm.css for consistent form styling
 - Applied responsive layouts using Bootstrap’s flex utility classes
 - Converted inline styling into reusable CSS classes for scalability
