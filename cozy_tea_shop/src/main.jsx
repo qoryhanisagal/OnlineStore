@@ -5,12 +5,14 @@ import "./styles/fonts.css";
 import App from './App.jsx'
 import 'bootstrap-icons/font/bootstrap-icons.css';
 import { CartProvider } from './context/CartContext.jsx';
-
+import { UserProvider } from './context/UserContext.jsx';
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <CartProvider>
-    <App />
-    </CartProvider>
-  </StrictMode>,
+    <UserProvider>
+      <CartProvider>
+        <App />
+      </CartProvider>
+    </UserProvider>
+  </StrictMode>
 );
