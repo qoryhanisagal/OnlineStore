@@ -3,66 +3,120 @@
     display: flex;
     list-style-type: none;
     padding: 0;
+    align-items: center;
+    justify-content: flex-end; /* Move nav links toward the right */
+    margin: 0;
+    gap: 15px; /* Reduced gap between items */
 }
 
 /* Each navbar item: fixed width and horizontal spacing */
-
-.navbar ul li{
+.navbar ul li {
+    display: flex;
+    align-items: center;
     width: 60px;
-    margin: 0 10px;
+    margin: 0 5px;
 }
 
 /* Hover effect: change color and make text bold when hovering over a nav item */
-.navbar ul li:hover{
+.navbar ul li:hover {
     color: teal;
     font-weight: bold;
-    cursor: pointer
+    cursor: pointer;
 }
 
 .navbar ul li a {
-    color: inherit; /* Use the value from the parent element. */
+    color: inherit; /* Use the value from the parent element */
     text-decoration: none;
 }
-  
+
 .navbar ul li a:hover {
     text-decoration: underline;
     font-weight: bold;
 }
 
 /* Main navbar container: dark background with flex layout and spacing */
-.navbar{
+.navbar {
     background-color: #333;
     color: white;
-    padding: 10px !important;
+    padding: 10px 20px !important;
     display: flex;
     align-items: center;
-    justify-content: space-between; 
+    justify-content: space-between;
+    max-width: 100%;
+    margin: 0 auto;
 }
 
 /* Brand title styling: bold, white text using Vampiro One font */
-.navbar .title{
+.navbar .title {
     font-weight: bold;
-    color:  white;
+    color: white;
     font-size: 32px;
     font-family: "Vampiro One", cursive;
     line-height: 32px;
     text-align: center;
 }
 
+/* Style for the cart icon and badge */
 .nav-icon {
     position: relative;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     font-size: 20px;
     color: inherit;
     text-decoration: none;
-  }
-  
-  .cart-badge {
+}
+
+/* Cart badge position and styling */
+.cart-badge {
     position: absolute;
-    top: -6px;
-    right: -8px;
+    top: -8px;
+    right: -10px;
     background-color: crimson;
     color: white;
     font-size: 12px;
     padding: 2px 6px;
     border-radius: 50%;
-  }
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 18px;
+    min-height: 18px;
+}
+
+/* Styles for user info in the navbar */
+.nav-user {
+    font-size: inherit;
+    color: #fff;
+    font-weight: bold;
+    margin-left: 5px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+    transition: color 0.3s;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 150px; /* Prevent username from breaking into a new line */
+}
+
+/* Container for aligning cart and user greeting */
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* Align cart and user greeting properly */
+.cart-user-container {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Add spacing between cart and user name */
+}
