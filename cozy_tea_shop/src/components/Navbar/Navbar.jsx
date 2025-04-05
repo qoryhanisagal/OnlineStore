@@ -43,10 +43,10 @@ function Navbar() {
       </ul>
 
         {/* Container for Cart and User Greeting */}
-        <div className="nav-right">
+        <div className="cart-user-container">
           {/* Cart Link and Badge */}
           <Link to="/cart" className="nav-icon">
-            <div style={{ position: "relative", display: "inline-block" }}>
+            <div className="cart-icon-container">
               <i className="bi bi-bag"></i> {/* Bootstrap bag icon */}
               {cartCount > 0 && (
                 <span className="cart-badge">{cartCount}</span>
@@ -55,9 +55,10 @@ function Navbar() {
           </Link>
 
           {/* User Greeting */}
-          <span className="nav-user">
-            Hello, {user.name || "Guest"}!
-          </span>
+          <Link to="/profile" className="nav-user">
+            <i className="bi bi-person-circle"></i> {/* Bootstrap person icon */}
+            Hello, {user.name || "Koiree"}!
+          </Link>
         </div>
     </div>
   );
