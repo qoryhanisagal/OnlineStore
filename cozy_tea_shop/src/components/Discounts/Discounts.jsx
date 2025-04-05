@@ -10,6 +10,7 @@ function Discounts() {
     type: "Percentage",
   });
 
+  const [allCoupons, setAllCoupons] = useState([]); // Store all coupons
   const [success, setSuccess] = useState(false); // Track form submission success
 
   // Handle change in input fields
@@ -27,7 +28,7 @@ function Discounts() {
     setCoupon(copy); // Update the state with the new coupon object
   }
 
-  // Save handler: logs the current discount form values to the console and sets success state to true
+  // Save handler: add coupon to allCoupons and reset form
   function save() {
     if (!coupon.code || !coupon.category || !coupon.discount || !coupon.type) {
       alert("Please fill in all fields.");
@@ -40,8 +41,17 @@ function Discounts() {
     console.log("Discount (%):", coupon.discount);
     console.log("Type:", coupon.type);
 
+    setAllCoupons([...allCoupons, coupon]); // Add coupon to allCoupons
     setSuccess(true); // Set success state to true after saving
     setTimeout(() => setSuccess(false), 3000); // Auto-hide after 3 seconds
+
+    // Reset the form
+    setCoupon({
+      code: "",
+      category: "",
+      discount: "",
+      type: "Percentage",
+    });
   }
 
   // Render discount form styled using shared admin styles (AdminForm.css)
@@ -110,6 +120,15 @@ function Discounts() {
       <button className="btn save-btn w-100 mt-2" onClick={save}>
         Save
       </button>
+
+      {/* Display list of all saved coupons */}
+      <ul className="coupon-list mt-4">
+        {allCoupons.map((c, index) => (
+          <li key={index}>
+            {c.code} - {c.discount}% ({c.type})
+          </li>
+        ))}
+      </ul>
     </div>
   );
 }
