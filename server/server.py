@@ -1,6 +1,7 @@
 from flask import Flask, request, render_template, jsonify
 import json
 from config import db
+from flask_cors import CORS
 
 app = Flask(__name__, template_folder="pages") # This is the name of the module/package that is being imported
 # This is the name of the package that is being run
@@ -13,6 +14,9 @@ app = Flask(__name__, template_folder="pages") # This is the name of the module/
 # when they go to the website
 # This is the same as the index.html file
 # in a static website       
+
+CORS(app, origins=["http://localhost:5173"])  # Warning will disaable CORS for all routes
+
 @app.get("/")
 def home():
     return render_template("index.html")
