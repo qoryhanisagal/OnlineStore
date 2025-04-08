@@ -4,7 +4,7 @@
     list-style-type: none;
     padding: 0;
     align-items: center;
-    justify-content: flex-end; /* Move nav links toward the right */
+    justify-content: flex-end; /* Moves nav links toward the right */
     margin: 0;
     gap: 15px; /* Reduced gap between items */
 }
@@ -34,9 +34,18 @@
     font-weight: bold;
 }
 
+.navbar .title a {
+    color: inherit;
+    text-decoration: none; /* ✅ Removes underline */
+}
+
+.navbar .title a:hover {
+    text-decoration: none;
+}
+
 /* Main navbar container: dark background with flex layout and spacing */
 .navbar {
-    background-color: #333;
+    background-color: #0e465a;
     color: white;
     padding: 10px 20px !important;
     display: flex;
@@ -114,6 +123,29 @@
     margin: 0;
     padding: 0;
 }
+
+.logo-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  .title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: "Vampiro One", cursive;
+    font-size: 32px;
+    line-height: 1.2;
+    font-weight: bold;
+    color: white;
+  }
+  
+  .logo-icon {
+    width: 36px;
+    height: auto;
+  }
 
 /* Align cart and user greeting properly */
 .cart-user-container {

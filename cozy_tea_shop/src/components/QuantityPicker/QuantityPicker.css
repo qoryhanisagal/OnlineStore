@@ -23,6 +23,11 @@
   transform: scale(1.2);
 }
 
+.quantity-picker button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
 /* Number label between the buttons — centered and bold */
 .quantity-picker label {
   font-size: 18px;

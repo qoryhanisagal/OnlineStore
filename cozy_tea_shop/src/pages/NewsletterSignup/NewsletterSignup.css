@@ -1,0 +1,48 @@
+.newsletter-signup {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #1e3b2f;
+    color: #fff;
+    padding: 4rem 2rem;
+    gap: 2rem;
+  }
+  
+  .left {
+    flex: 1;
+    min-width: 300px;
+    max-width: 600px;
+  }
+  
+  .left h1 {
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
+  }
+  
+  .left p {
+    margin-bottom: 1.5rem;
+    line-height: 1.5;
+  }
+  
+  .disclaimer {
+    font-size: 0.75rem;
+    margin-top: 1rem;
+    color: #ccc;
+  }
+  
+  .disclaimer a {
+    color: #ffd700;
+    text-decoration: underline;
+  }
+  
+  .right {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .right img {
+    max-width: 100%;
+    border-radius: 8px;
+    object-fit: cover;
+  }

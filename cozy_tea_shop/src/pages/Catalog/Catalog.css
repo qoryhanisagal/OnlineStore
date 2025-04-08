@@ -1,21 +1,23 @@
 /* Catalog.css - Styles for the product catalog page layout and product grid*/
-
-  /* Outer container for the catalog page with padding and center alignment */
+/* Outer container for the catalog page with padding and center alignment */
 .catalog {
-    padding: 40px;
-    text-align: center;
-  }
-  
-  /* Main heading style for the catalog title */
-  .catalog h1 {
-    font-size: 28px;
-    margin-bottom: 40px;
-  }
-  
-  /* Grid layout for displaying all products responsively */
-  .productlist {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 30px;
-    justify-items: center;
-  }
+  padding: 40px 20px;
+  max-width: 100vw;       /* NEW: Sets max-width to 100vw */
+  margin: 0 auto;         /* NEW: Centers the container */
+  font-family: "Montserrat", sans-serif;
+}
+
+/* Main heading */
+.catalog h1 {
+  font-size: 28px;
+  margin-bottom: 40px;
+  text-align: center;     /* Move text-align here */
+}
+
+/* Grid layout */
+.productlist {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  justify-items: center;
+  width: 100%;            /* Makes sure grid fills container */
+}

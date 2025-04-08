@@ -12,13 +12,7 @@ function Product(props) {
 
   // I'm using React state to track the quantity selected for this product
   const [quantity, setQuantity] = useState(1);
-
-  // This function is triggered when the user clicks the 'Add to bag' button
-  // It currently just logs the quantity and product title to the console
-  function add() {
-    console.log(`Adding ${quantity}x ${props.data.title} to cart`);
-  }
-
+  
   // This callback updates the quantity when the QuantityPicker changes
   function handleQuantity(val) {
     setQuantity(val);
@@ -34,36 +28,45 @@ function Product(props) {
     addToCart(productToAdd); // Send the product to cart context
   }
 
-  return (
-    <>
-      {/* Product card container with image, title, price display, and cart controls */}
-      <div className="product">
-        {/* Display the product image */}
-        <img src={props.data.image} alt={props.data.title} />
+return (
+  <div className="product-card">
+    {/* Product Image */}
+    <img src={props.data.image} alt={props.data.title} className="product-image" />
 
-        {/* Show the product title */}
-        <h5>{props.data.title}</h5>
+    {/* Product Title */}
+    <h5>{props.data.title}</h5>
 
-        {/* Display total and unit price. Highlight total if quantity > 1 */}
-        <div className="prices">
-          <label className={`total ${quantity > 1 ? "highlight-total" : ""}`}>
-              Total: ${total}
-          </label>
-          <label className="unit">Unit: ${props.data.price}</label>
-      </div>
+    {/* Pricing */}
+    <div className="prices">
+      <label className={`total ${quantity > 1 ? "highlight-total" : ""}`}>
+        Total: ${total}
+      </label>
+      <label className="unit">Unit: ${props.data.price}</label>
+    </div>
 
-        {/* QuantityPicker allows users to select how many units they want */}
-        <div className="controls">
-          <QuantityPicker onChange={handleQuantity} />
-        </div>
+    {/* Quantity Controls with minus/plus */}
+    <div className="quantity-controls">
+      <button onClick={() => setQuantity(quantity - 1)} disabled={quantity === 1}>-</button>
+      <span>{quantity}</span>
+      <button onClick={() => setQuantity(quantity + 1)}>+</button>
+    </div>
 
-        {/* Add to bag button with cart icon */}
-        <button className="add-btn" onClick={add}>
-          <i className="fa-solid fa-cart-plus"></i> Add to bag
-        </button>
-      </div>
-    </>
-  );
+    {/* Wishlist + Add to Cart Icons */}
+    <div className="product-actions">
+      <button className="icon-button wishlist">
+        <i className="bi bi-heart"></i>
+      </button>
+      <button className="icon-button add-to-cart" onClick={() => add()}>
+        <i className="bi bi-bag"></i>
+      </button>
+    </div>
+  </div>
+);
 }
+// Notes:
+// 1. The Product component is designed to display individual product details.
+// 2. It includes an image, title, pricing, quantity controls, and action buttons.
+// 3. The component uses React state to manage the quantity of the product.
+// 4. It also uses the CartContext to add products to the cart. 
 
 export default Product;

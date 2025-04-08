@@ -1,87 +1,149 @@
 /* Notes: Rethink this design — does not look good */
 /* Container for each product card */
-.product {
-    width: 220px;
-    padding: 20px;
-    border-radius: 15px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    background-color: white;
-    transition: transform 0.3s ease;
-  }
+.product-card {
+  width: 100%;
+  max-width: unset;
+  height: 100%;
+  min-height: 540px; /* Set a minimum height */
+  box-sizing: border-box;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  background-color: #fff;
+  transition: transform 0.3s ease-in-out;
+  justify-content: space-between; 
+}
   
-  .product:hover {
-    transform: translateY(-5px);
-  }
-  
-  /* Product image */
-  .product img {
-    width: 120px;
-    height: auto;
-    margin-bottom: 15px;
-    object-fit: contain;
-  }
-  
-  /* Title */
-  .product h5 {
-    font-size: 1.1rem;
-    font-weight: 600;
-    margin-bottom: 10px;
-    color: #333;
-  }
-  
-  /* Price display */
-  .prices {
-    display: flex;
-    flex-direction: column;
-    margin: 10px 0;
-    gap: 5px;
-  }
-  
-  .total {
-    font-size: 1.1rem;
-    font-weight: 500;
-    color:#0e465a;
-  }
-  
-  .unit {
-    font-size: 0.9rem;
-    color: #777;
-  }
-  
-  /* When quantity > 1 */
-  .highlight-total {
-    color: green;
-    font-weight: bold;
-  }
-  
-  /* Controls (Quantity Picker wrapper) */
-  .controls {
-    margin: 15px 0;
-  }
-  
-  /* Add to bag button */
-  .add-btn {
-    background-color: #0e465a;
-    color: white;
-    border: none;
-    padding: 10px 16px;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    font-weight: 500;
-  }
-  
-  .add-btn:hover {
-    background-color: #09303e;
-    transform: scale(1.02);
-  }
+.product-card {
+  transform: translateY(-5px);
+}
+.product-card:hover {
+  transform: translateY(-10px);
+}
 
-  @media (max-width: 600px) {
-    .product {
-      width: 100%;
-      max-width: 300px;
-      margin: 0 auto;
-    }
+.productlist {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2.5rem;
+  padding: 2rem;
+  justify-content: center;
+}
+
+/* Product image */
+.product-card img {
+  width: 600px;
+  max-width: 150%;
+  height: auto;
+  margin-bottom: 40px;
+  object-fit: contain;
+}
+
+/* Title */
+.product-card h5 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+/* Price display */
+.prices {
+  display: flex;
+  flex-direction: column;
+  margin: 10px 0;
+  gap: 5px;
+}
+
+.total {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color:#0e465a;
+}
+
+.unit {
+  font-size: 0.9rem;
+  color: #777;
+}
+
+/* When quantity > 1 */
+.highlight-total {
+  color: green;
+  font-weight: bold;
+}
+
+.quantity-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  border-radius: 8px;
+  padding: 6px 12px;
+  background-color: transparent;
+}
+
+.quantity-controls button {
+  background-color: transparent;
+  border: none;
+  color: #0e465a;
+  font-size: 2rem;
+  font-weight: bold;
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.quantity-controls button:hover {
+  background-color: #0e465a;
+  color: white;
+  box-shadow: 0 0 4px rgba(14, 70, 90, 0.3);
+}
+
+.quantity-controls span {
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: #0e465a;
+  padding: 0 10px;
+}
+
+.product-actions {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: auto; /* Pushes buttons to the bottom */
+}
+
+.icon-button {
+  background-color: transparent;
+  border: none;
+  font-size: 1.5rem;
+  color: #0e465a;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.icon-button:hover {
+  background-color: rgba(14, 70, 90, 0.1); /* soft teal overlay */
+  border-radius: 6px;
+  transform: scale(1.1);
+  transition: color 0.2s ease, transform 0.2s ease, background-color 0.2s ease; 
+}
+
+@media (max-width: 600px) {
+  .product-card {
+    width: 100%;
+    max-width: 90%;
+    margin: 0 auto;
   }
+}
+ 
   

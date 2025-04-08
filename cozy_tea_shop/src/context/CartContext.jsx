@@ -1,55 +1,91 @@
 import { createContext, useState } from 'react';
 
-// 1. Create the context
+// I create the context so other components can use it
 export const CartContext = createContext();
 
-// 2. Create the provider component
+// I create the provider that wraps my app and shares cart data
 export function CartProvider({ children }) {
   const [cartItems, setCartItems] = useState([]);
 
-  // Add product to cart (update quantity if already exists)
+  // I use this to add a product to the cart
   const addToCart = (product) => {
     setCartItems((prevItems) => {
-      const existingItemIndex = prevItems.findIndex(item => item._id === product._id);
+      const existingItemIndex = prevItems.findIndex(
+        (item) => item._id === product._id
+      );
 
       if (existingItemIndex !== -1) {
-        // Update quantity if product already exists
+        // If the product is already in the cart, I update its quantity
         const updatedItems = [...prevItems];
-        updatedItems[existingItemIndex].quantity += product.quantity;
+        updatedItems[existingItemIndex] = {
+          ...updatedItems[existingItemIndex],
+          quantity: product.quantity, //  Overwrites with latest quantity
+        };
         return updatedItems;
       } else {
-        // Add new product if not in cart
+        // If it's not in the cart yet, I add it
         return [...prevItems, product];
       }
     });
   };
 
-  // Remove item from cart
+  // I remove a product by its _id
   const removeFromCart = (id) => {
-    setCartItems((prevItems) => prevItems.filter(item => item._id !== id));
+    setCartItems((prevItems) =>
+      prevItems.filter((item) => item._id !== id)
+    );
   };
 
-  // Clear all items from the cart
+  // I increase the quantity of a specific product
+  const incrementQuantity = (id) => {
+    setCartItems((prevItems) =>
+      prevItems.map((item) =>
+        item._id === id
+          ? { ...item, quantity: item.quantity + 1 }
+          : item
+      )
+    );
+  };
+
+  //  I decrease the quantity and remove it if the quantity goes to 0
+  const decrementQuantity = (id) => {
+    setCartItems((prevItems) =>
+      prevItems
+        .map((item) =>
+          item._id === id
+            ? { ...item, quantity: item.quantity - 1 }
+            : item
+        )
+        .filter((item) => item.quantity > 0)
+    );
+  };
+
+  // I use this to completely clear the cart
   const clearCart = () => {
     setCartItems([]);
   };
 
-  // Calculate total quantity of items in the cart
+  // I calculate the total quantity of items
   const getTotalQuantity = () => {
     return cartItems.reduce((total, item) => total + item.quantity, 0);
   };
 
-  // Calculate total price of items in the cart
+  // I calculate the total price of the cart
   const getTotalPrice = () => {
-    return cartItems.reduce((total, item) => total + item.quantity * item.price, 0).toFixed(2);
+    return cartItems
+      .reduce((total, item) => total + item.quantity * item.price, 0)
+      .toFixed(2);
   };
 
+  // I provide everything that components need to use from this context
   return (
     <CartContext.Provider
       value={{
         cartItems,
         addToCart,
         removeFromCart,
+        incrementQuantity, // Needed for + button
+        decrementQuantity, // Needed for - button
         clearCart,
         getTotalQuantity,
         getTotalPrice,
@@ -60,5 +96,5 @@ export function CartProvider({ children }) {
   );
 }
 
-// ✅ Export CartProvider to wrap the application
+// I export this so I can wrap my app with it
 export default CartProvider;

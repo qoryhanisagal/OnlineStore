@@ -32,7 +32,7 @@ function QuantityPicker(props) {
   return (
     <div className="quantity-picker">
       {/* Decrease button */}
-      <button onClick={decrease}>-</button>
+      <button onClick={decrease} disabled={quantity === 1}>-</button>
       {/* Quantity display */}
       <label>{quantity}</label>
       {/* Increase button */}

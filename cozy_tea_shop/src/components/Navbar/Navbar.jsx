@@ -14,36 +14,54 @@ function Navbar() {
   return (
     <div className="navbar">
       {/* Logo and Title */}
-      <span className="title">
-        Cozy
-        <br />
-        Tea Shop
-      </span>
+      {/* Clickable logo that routes to Home */}
+      <Link to="/" className="logo-link">
+        <div className="title">
+          <img src="/img/cozy-tea-logo.png" alt="Cozy Tea Logo" className="logo-icon" />
+           <span>Cozy Tea Shop</span>
+        </div>
+      </Link>
 
       {/* Navigation Links */}
       <ul>
-        <li>
+        {/* <li>
           <Link to="/">Home</Link>
-        </li>
+        </li> */}
         <li>
-          <Link to="/filter">Catalog</Link>
+          <Link to="/filter">Shop</Link>
         </li>
         <li>
           <Link to="/about">About</Link>
         </li>
+        
         <li>
-          <Link to="/contact">Contact</Link>
+        <Link to="/newsletter">Subscribe</Link>
         </li>
-        <li>
+         {/* <li>
           <Link to="/admin">Admin</Link>
-        </li>
-        <li>
+        </li> */}
+        {/* <li>
           <Link to="/profile">Profile</Link>
-        </li>
+        </li> */}
       </ul>
 
         {/* Container for Cart and User Greeting */}
         <div className="cart-user-container">
+          {/* Search Icon */}
+          <Link to="/search" className="nav-icon">
+            <i className="bi bi-search"></i>
+          </Link>
+
+          {/* Favorites Link */}
+          <Link to="/favorites" className="nav-icon">
+            <i className="bi bi-heart"></i> {/* Bootstrap heart icon */}
+          </Link>
+
+          {/* Notification Icon */}
+          <Link to="/notifications" className="nav-icon">
+            <i className="bi bi-bell"></i>
+          </Link>
+          
           {/* Cart Link and Badge */}
           <Link to="/cart" className="nav-icon">
             <div className="cart-icon-container">
@@ -52,6 +70,11 @@ function Navbar() {
                 <span className="cart-badge">{cartCount}</span>
               )}
             </div>
+          </Link>
+
+          {/* Admin Icon */}
+          <Link to="/admin" className="nav-icon">
+            <i className="bi bi-shield-lock"></i> {/* Bootstrap shield lock icon */}
           </Link>
 
           {/* User Greeting */}
