@@ -1,10 +1,11 @@
 import { useState } from "react";
 import "../../styles/AdminForm.css";
+import DataService from "../../services/DataService";
 
 function ProductAdmin() {
 
 // Track input value for Title
-const [title, setTitle] = useState("");
+const [product, setProduct] = useState("");
 
 // Track input value for Price
 const [price, setPrice] = useState("");
@@ -15,13 +16,55 @@ const [image, setImage] = useState("");
 // Track input value for Category
 const [category, setCategory] = useState("");
 
+
+function handleChange(event) {
+    // Update the state with the new value from the input field
+    setProduct(event.target.value);
+}
+// Update the state with the new value from the input field
+function handlePriceChange(event) {
+    setPrice(event.target.value);
+}
+// Update the state with the new value from the input field
+function handleImageChange(event) {
+    setImage(event.target.value);
+}
+// Update the state with the new value from the input field
+function handleCategoryChange(event) {
+    setCategory(event.target.value);
+}
+// Function to handle form submission
+// This function is called when the user clicks the "Save" button
+// It currently logs the product details to the console
+// In a real application, you would typically send this data to a server
+// or perform some other action with it
+
 // Handles form submission by logging the product details to the console
-function save() {
-console.log("Saving product:");
-console.log("Title:", title);
-console.log("Price:", price);
-console.log("Image URL:", image);
-console.log("Category:", category);
+async function save() {
+  const parsedPrice = parseFloat(price); // Convert price string to number
+  const productObj = {
+    title: product,
+    price: parsedPrice,
+    image: image,
+    category: category,
+  };
+
+  try {
+    const response = await DataService.saveProduct(productObj);
+    console.log("✅ Product saved:", response);
+  } catch (err) {
+    console.error("❌ Error saving product:", err);
+  }
+}
+
+// Optional utility: returns a shallow copy of the product state as an object
+function getProductCopy() {
+  return {
+    title: product,
+    price: parseFloat(price),
+    image: image,
+    category: category,
+  };
 }
 
   // Render the admin product form with shared styles
@@ -31,12 +74,12 @@ console.log("Category:", category);
 
         {/* Field for entering the product Title */}
         <div className="form-group mb-3">
-        <label>Title</label>
+        <label>Product Name</label>
         <input 
             type="text" 
             className="form-control" 
-            value={title}
-            onChange={(e) => setTitle(e.target.value)}
+            value={product}
+            onChange={(e) => setProduct(e.target.value)}
         />
         </div>
 

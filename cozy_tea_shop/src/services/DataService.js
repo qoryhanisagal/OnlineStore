@@ -10,7 +10,13 @@ class DataService {
     return response.data;
   }
 
-  // POST a new product
+  // POST a new product from the admin form
+  // This function is called when the admin form is submitted
+  // It sends a POST request to the backend API with the product data
+  // The backend will handle the request and save the product to the database
+  // The function returns the response data from the server
+  // This is useful when I needed to confirmn that the product was saved successfully
+  // and for updating the UI.
   async saveProduct(product) {
     const response = await axios.post(`${baseUrl}/api/catalog`, product);
     return response.data;
