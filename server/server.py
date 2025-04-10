@@ -113,8 +113,7 @@ def delete_products(index):
         return "that index does not exist" 
     #    ---> I need to return a message if the index does not exist
     
-
-
+    
 @app.patch("/api/catalog/<int:index>")
 def patch_products(index):
     #    ---> Here we need to specify wich element from products list will be updated
@@ -174,14 +173,8 @@ def product_by_category(category):
 
 @app.get("/api/categories")
 def get_categories():
-    categories = []  # Initialize empty list to hold unique categories
-
-    for product in products:  # Loop through each product in the products list
-        if product["category"] not in categories:  # Check if category is already in the list
-            categories.append(product["category"])  # If not, add it
-
-    return json.dumps(categories)  # Return the unique list as a JSON string
-
+    categories = db.products.distinct("category")  # Get unique categories from MongoDB
+    return json.dumps(categories)
 
 @app.get("/api/reports/total")
 def get_total_catalog_value(): 
