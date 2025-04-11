@@ -30,8 +30,9 @@
 }
 
 .navbar ul li a:hover {
-    text-decoration: underline;
+    text-decoration: none;
     font-weight: bold;
+    color: #f7efe3;
 }
 
 .navbar .title a {

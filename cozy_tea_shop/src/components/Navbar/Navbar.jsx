@@ -30,6 +30,11 @@ function Navbar() {
         <li>
           <Link to="/filter">Shop</Link>
         </li>
+
+        <li>
+        <Link to="/catalog">Catalog</Link>
+        </li>
+        
         <li>
           <Link to="/about">About</Link>
         </li>
@@ -37,6 +42,7 @@ function Navbar() {
         <li>
         <Link to="/newsletter">Subscribe</Link>
         </li>
+
          {/* <li>
           <Link to="/admin">Admin</Link>
         </li> */}
