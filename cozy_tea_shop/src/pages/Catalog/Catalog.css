@@ -1,23 +1,100 @@
-/* Catalog.css - Styles for the product catalog page layout and product grid*/
-/* Outer container for the catalog page with padding and center alignment */
 .catalog {
+  /* I'm styling the catalog layout with padding and width settings to ensure it fits the viewport and aligns the content centrally. */
   padding: 40px 20px;
   max-width: 100vw;       /* NEW: Sets max-width to 100vw */
   margin: 0 auto;         /* NEW: Centers the container */
   font-family: "Montserrat", sans-serif;
+  padding: 40px 20px;
+  padding-top: 0;        /* NEW: Provides spacing between the hero image and heading */
+  padding-bottom: 60px;  /* NEW: Provides spacing between the hero image and heading */
 }
 
 /* Main heading */
 .catalog h1 {
+  /* I'm formatting the main heading with a readable font size and centering it to give the catalog a clean and inviting intro. */
   font-size: 28px;
   margin-bottom: 40px;
   text-align: center;     /* Move text-align here */
+  margin-top: 40px;      /* NEW: Increases visual separation from the hero image */
 }
 
 /* Grid layout */
 .productlist {
+  /* I'm using a responsive grid layout so that product cards adjust nicely across different screen sizes. */
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   justify-items: center;
   width: 100%;            /* Makes sure grid fills container */
+  margin-top: 40px;      /* NEW: Ensures consistent spacing from the heading */
+}
+
+.hero-section {
+  /* I'm structuring the hero section with a full-width background image and flexbox to align the content at the top-left. */
+  position: relative;
+  width: 100vw;
+  height: 475px;
+  margin-left: -20px;
+  margin-right: -20px;
+  padding: 0;
+  background-color: #e6f6fc;
+  background-image: url('/img/hero-waves.png');
+  background-repeat: repeat;
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* Moves content to the top */
+  align-items: flex-start;     /* Aligns content to the left */
+  text-align: left;
+  width: calc(100vw + 40px);
+  padding-left: 60px;
+  padding-top: 40px;           /* Controls vertical placement */
+}
+
+.hero-content {
+  /* I'm positioning the heading manually here to avoid overlap with the floating tea image and to match the design layout. */
+  position: absolute;
+  top: 40px; /* adjust this upward */
+  left: 60px;
+  z-index: 2;
+  text-align: left;
+}
+
+.hero-heading {
+  /* I'm applying a serif font and increasing the font size for a strong, elegant headline. */
+  font-size: 60px;  /* adjust to taste */
+  font-family: "Georgia", "Playfair Display", "Times New Roman", serif;
+  font-weight: bold;
+  color: #0e465a;
+  line-height: 1.2;
+  margin: 0;
+}
+
+.floating-image {
+  /* I'm positioning the floating tea image so that it looks dynamic and central in the hero section. */
+  position: absolute;
+  top: 50%;
+  left: 55%; /* was 50% — shifts image slightly to the right */
+  transform: translate(-50%, -50%);
+  max-width: 70%;
+  height: auto;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.catalog-banner {
+  max-width: 800px;
+  max-height: 500px;
+  top: 50%;
+  left: 60%;
+  transform: translate(-50%, -50%);
+}
+
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 30px;     /* ← Add this to push it down */
+  margin-bottom: 40px;
 }

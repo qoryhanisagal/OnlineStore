@@ -31,8 +31,9 @@ function Product(props) {
 return (
   <div className="product-card">
     {/* Product Image */}
-    <img src={props.data.image} alt={props.data.title} className="product-image" />
-
+    <div className="image-wrapper">
+      <img src={props.data.image} alt={props.data.title} />
+    </div>
     {/* Product Title */}
     <h5>{props.data.title}</h5>
 

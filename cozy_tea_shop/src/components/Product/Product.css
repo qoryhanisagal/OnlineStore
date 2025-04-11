@@ -1,29 +1,26 @@
-/* Notes: Rethink this design — does not look good */
-/* Container for each product card */
 .product-card {
   width: 100%;
-  max-width: unset;
-  height: 100%;
-  min-height: 540px; /* Set a minimum height */
+  max-width: 320px;
+  min-height: 200px;
   box-sizing: border-box;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 2rem;
-  border-radius: 16px;
+  padding: 1.5rem;
+  border-radius: 24px !important;
+  border: 1px solid rgba(0, 0, 0, 0.12);
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
   text-align: center;
   background-color: #fff;
-  transition: transform 0.3s ease-in-out;
-  justify-content: space-between; 
+  transition: transform 0.4s ease-in-out;
+  overflow: hidden; /* Ensures shadow and content stay within */
 }
-  
-.product-card {
-  transform: translateY(-5px);
-}
+
 .product-card:hover {
   transform: translateY(-10px);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.15);
+  background-color: #f9f9f9;
 }
 
 .productlist {
@@ -31,16 +28,37 @@
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 2.5rem;
   padding: 2rem;
+  padding-bottom: 3rem;
   justify-content: center;
+  align-items: start;
 }
 
 /* Product image */
 .product-card img {
-  width: 600px;
-  max-width: 150%;
-  height: auto;
-  margin-bottom: 40px;
+  width: 100%;
+  height: 175px;
   object-fit: contain;
+  display: block;
+  border-radius: 0; /* Ensures image does not override card's border-radius */
+}
+
+/* Image Wrapper */
+.image-wrapper {
+  width: 100%;
+  height: 170px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  background-color: transparent; 
+  overflow: hidden;
+}
+
+.image-wrapper img {
+  max-height: 100%;
+  max-width: 100%;
+  object-fit: contain;
+  display: block;
 }
 
 /* Title */
@@ -145,5 +163,3 @@
     margin: 0 auto;
   }
 }
- 
-  

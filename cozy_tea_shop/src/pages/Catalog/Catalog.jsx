@@ -1,7 +1,9 @@
 import { useEffect, useState } from "react";
 import DataService from "../../services/DataService";
 import Product from "../../components/Product/Product";
+import FilterOption from "../../components/FilterOption"; 
 import "./Catalog.css";
+import bannerImg from "../../assets/banner-tea-floating.png";
 
 // // Static mock product data for display in the catalog
 // const mockData = [
@@ -12,12 +14,14 @@ function Catalog() {
   // `products` will hold the list of products fetched from the backend
   // `setProducts` is the function used to update that state
   const [products, setProducts] = useState([]);
+  const [categories, setCategories] = useState(["All"]);
+  const [selectedCategory, setSelectedCategory] = useState("All");
 
   // Step 2: useEffect hook runs once when this component first mounts (loads)
-  // We use this to fetch data when the page opens
+  // I use this to fetch data when the page opens
   useEffect(() => {
     // Step 3: Define an async function inside useEffect
-    // We can't make the useEffect itself async, so we define fetchCatalog here
+    // I can't make the useEffect itself async, so I define fetchCatalog here
     const fetchCatalog = async () => {
       try {
         // Step 4: Call the DataService to fetch the product catalog from the backend API
@@ -27,6 +31,8 @@ function Catalog() {
         // Step 5: Update local state with the fetched data
         // This triggers a re-render of the component with the new product list
         setProducts(data);
+        const catData = await DataService.getCategories();
+        setCategories(["All", ...catData]);
       } catch (err) {
         // Step 6: Catch and log any errors that occur during the fetch process
         // This helps with debugging in case the backend is down or the API fails
@@ -54,16 +60,36 @@ function Catalog() {
   // The Product component is passed the product data as props
   // The Product component is responsible for rendering the product details
   // The Product component is reusable and can be used to display any product
+    const filteredProducts = selectedCategory === "All"
+    ? products
+    : products.filter((prod) => prod.category === selectedCategory);
+    // The filteredProducts array contains only the products that match the selected category
   return (
     <>
       {/* Container for the entire catalog page */}
       <div className="catalog">
-        {/* Catalog heading */}
-        <h1>Check out our amazing catalog!</h1>
-  
+        {/* Hero banner section */}
+        <section className="hero-section">
+          <div className="hero-content">
+            <h2 className="hero-heading">Our Tea Selection</h2>
+          </div>
+          <img className="floating-image catalog-banner" src={bannerImg} alt="Floating tea packs" />
+        </section>
+
+        <div className="filters">
+          {categories.map((cat) => (
+            <FilterOption
+              key={cat}
+              label={cat}
+              isActive={selectedCategory === cat}
+              onClick={setSelectedCategory}
+            />
+          ))}
+        </div>
+
         {/* Grid of all Product components mapped from mock data */}
         <div className="productlist">
-          {products.map((item) => (
+          {filteredProducts.map((item) => (
             <Product key={item._id} data={item} />
           ))}
         </div>

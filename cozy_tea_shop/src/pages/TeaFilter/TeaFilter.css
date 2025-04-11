@@ -34,3 +34,91 @@
   justify-items: center;
   padding: 0 10px;
 }
+
+.hero-yellow {
+  background-color: #f7efe3; /* light yellow */
+  background-image: url('/img/hero-yellow-waves.png');
+}
+
+.hero-section.hero-yellow {
+  /* I'm structuring the hero section with a full-width background image and flexbox to align the content at the top-left. */
+  position: relative;
+  width: 100vw;
+  height: 475px;
+  margin-left: -20px;
+  margin-right: -20px;
+  padding: 0;
+  background-color: #f7efe3;
+  background-repeat: repeat;
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* Moves content to the top */
+  align-items: flex-start;     /* Aligns content to the left */
+  text-align: left;
+  width: calc(100vw + 40px);
+  padding-left: 60px;
+  padding-top: 40px;           /* Controls vertical placement */
+}
+
+.hero-content {
+  /* I'm positioning the heading manually here to avoid overlap with the floating tea image and to match the design layout. */
+  position: absolute;
+  top: 40px; /* adjust this upward */
+  left: 60px;
+  z-index: 2;
+  text-align: left;
+}
+
+.hero-heading {
+  /* I'm applying a serif font and increasing the font size for a strong, elegant headline. */
+  font-size: 60px;  /* adjust to taste */
+  font-family: "Georgia", "Playfair Display", "Times New Roman", serif;
+  font-weight: bold;
+  color: #0e465a;
+  line-height: 1.2;
+  margin: 0;
+}
+
+.floating-image {
+  position: absolute;
+
+  /* Center vertically */
+  top: 50%;
+
+  /* Move it more to the right */
+  left: 65%; /* try 65% or 70% */
+
+  /* Center the image from its middle */
+  transform: translate(-50%, -50%);
+
+  /* Make it larger */
+  max-width: 420px;  /* increase from 320 or 300 */
+  max-height: 400px;
+
+  z-index: 2;
+  pointer-events: none;
+  object-fit: contain;
+
+  transition: opacity 0.5s ease-in-out;
+  opacity: 1;
+}
+
+/* ONLY for the All Tea image */
+.default-banner {
+  max-width: 150%;
+  max-height: 800px;
+  left: 60%;
+}
+
+@media (max-width: 768px) {
+  .floating-image {
+    width: 90%;
+    max-width: 300px;
+  }
+
+  .hero-heading {
+    font-size: 36px;
+  }
+}
