@@ -1,8 +1,10 @@
 import React, { useContext, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { CartContext } from "../../context/CartContext";
 import "./Purchase.css";
 
 function Purchase() {
+  const navigate = useNavigate();
   const { cartItems, getTotalPrice } = useContext(CartContext);
 
   const [shippingMethod, setShippingMethod] = useState("Post Office Delivery");
@@ -37,9 +39,27 @@ function Purchase() {
       <div className="purchase-container">
         <div className="two-column-layout">
           {/* Left Column: Items Overview */}
-          <div className="items-overview" style={{ border: '1px solid #0e465a', padding: '0', margin: '0' }}>
+          <div
+            className="items-overview"
+            style={{
+              borderLeft: "1px solid #0e465a",
+              borderTop: "1px solid #0e465a",
+              borderRight: "none",
+              borderBottom: "none",
+              padding: "0",
+              margin: "0",
+            }}
+          >
+            <div className="back-btn-wrapper">
+              <button className="back-btn" onClick={() => navigate("/cart")}>
+                ← Back to Cart
+              </button>
+            </div>
             <h2>Items overview</h2>
-            <p>This is your order summary where you can edit and delete your order and select your preferred delivery type.</p>
+            <p>
+              This is your order summary where you can edit and delete your order
+              and select your preferred delivery type.
+            </p>
 
             {cartItems.map((item) => (
               <div className="purchase-item" key={item._id}>
@@ -125,7 +145,9 @@ function Purchase() {
                 required
               />
 
-              <button type="submit" className="finish-btn">Finish purchase</button>
+              <button type="submit" className="finish-btn">
+                Finish purchase
+              </button>
             </form>
           </div>
         </div>

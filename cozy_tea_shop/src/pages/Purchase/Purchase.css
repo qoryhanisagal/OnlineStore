@@ -13,6 +13,27 @@
     justify-content: center;
     align-items: flex-start;
 }
+
+.back-btn {
+    background-color: #0e465a;
+    color: white;
+    padding: 8px 16px;
+    margin-bottom: 20px;
+    border: none;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+  
+  .back-btn:hover {
+    background-color: #062c39; /* Slightly darker teal on hover */
+}
+
+.back-btn-wrapper {
+    margin-bottom: 1rem;
+    /* optional additional styles */
+}
   
 /* Two-column layout */
 .two-column-layout {
@@ -28,9 +49,12 @@
 .items-overview {
     flex: 1;
     background-color: #fdfbf6;
-    padding: 32px;
-    border: 1px solid #0e465a; /* your base teal */
-    border-radius: 0; /* remove rounded corners */
+    border-left: 2px solid #0e465a;
+    border-top: 2px solid #0e465a;
+    border-right: none;
+    border-bottom: none;
+    padding: 20px;
+    box-shadow: none;
     text-align: left;
 }
   

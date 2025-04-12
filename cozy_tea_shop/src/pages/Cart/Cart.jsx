@@ -83,7 +83,8 @@ function Cart() {
           {/* Navigation Buttons */}
           <div className="cart-buttons-wrapper">
             <div className="cart-buttons">
-              <button className="checkout-btn">Go to checkout</button>
+              <button className="checkout-btn"onClick={() => navigate("/purchase")}>
+              Go to checkout</button>
               <button
                 className="store-btn"
                 onClick={() => navigate("/catalog")}
