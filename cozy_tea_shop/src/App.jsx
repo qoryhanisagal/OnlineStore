@@ -10,6 +10,8 @@ import About from "./pages/About/About";
 import Admin from "./pages/AdminDashboard/Admin";
 import Footer from "./components/Footer";
 import Newsletter from "./pages/Newsletter/Newsletter";
+import Purchase from './pages/Purchase/Purchase';
+import Success from "./pages/Success/Success";
 import './App.css';
 // Clean imports using index.jsx
 
@@ -61,7 +63,15 @@ function App() {
 
         {/* Admin Dashboard - contains product and discount forms for admin users */}
         <Route path="/admin" element={<Admin />} />
+
+        {/* Payment Page - allows users to select shipping and payment methods */}
+        <Route path="/purchase" element={<Purchase />} />
+
+        {/* Success Page - displays a confirmation message after a successful purchase */}
+        <Route path="/success" element={<Success />} />
       </Routes>
+
+     
 
       {/* Footer - includes newsletter sign-up and site navigation */}
       

@@ -1,0 +1,45 @@
+.success-container {
+    text-align: center;
+    padding: 60px 20px;
+    font-family: "Montserrat", sans-serif;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  .success-title {
+    font-size: 2.5rem;
+    color: #0e465a;
+    margin-bottom: 20px;
+  }
+  
+  .success-image {
+    width: 200px;
+    height: auto;
+    margin: 20px 0;
+  }
+  
+  .success-message {
+    font-size: 1.25rem;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  .success-details {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 40px;
+  }
+  
+  .success-button {
+    background-color: #0e465a;
+    color: white;
+    padding: 12px 24px;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .success-button:hover {
+    background-color: #093740;
+  }
