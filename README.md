@@ -1,11 +1,11 @@
 🫖 Cozy Tea Shop – Full Stack Online Stor
 
-A full-stack web application for a cozy tea shop, featuring a React frontend, a Flask + MongoDB backend, and an admin dashboard for managing products and discoun
+#### A full-stack web application for a cozy tea shop, featuring a React frontend, a Flask + MongoDB backend, and an admin dashboard for managing products and discoun
 ---
 
 ## 👩🏽‍💻 Submitted By
 - **Name:** Sequoyah Dozier  (Koiree)
-- **Course:** FSDI 107 – Intro to React Python Backend  
+- **Course:** FSDI 110 Introduction to API (ASP.NET/Flask)
 - **Submission Date:** March 10, 2025
 
 ---
