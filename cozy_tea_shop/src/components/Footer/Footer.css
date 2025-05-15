@@ -1,0 +1,142 @@
+ /* Footer.css - Styles for the site footer including layout, newsletter, branding, social icons, and link sections.
+   I'm using a responsive flexbox layout with clearly scoped sections (left, center, right) and styling consistency
+   with the rest of the site. Most of the design follows the Cozy Tea Shop branding using #0e465a and white.
+  */
+  
+  /* Main footer container with responsive spacing and color */
+  .footer {
+    width: 100%;
+    overflow-x: hidden;
+    box-sizing: border-box;
+    background-color: #0e465a;
+    color: #fff;
+    padding: 40px 60px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 40px;
+    font-family: 'Montserrat', sans-serif;
+  }
+  
+  /* Base style for all footer sections (left, center, right) */
+  .footer-section {
+    flex: 1;
+    min-width: 250px;
+  }
+  
+  /* Left section: Branding text and social icons */
+  .footer-section.left {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 16px;
+    text-align: left;
+  }
+
+  /* Center section: Newsletter signup form */
+  .footer-section.center {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    max-width: 300px;
+    gap: 30px;
+  }
+
+  /* Layout for email input and subscribe button */
+  .newsletter-row {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 16px;
+    width: 100%;
+    max-width: 500px;
+  }
+  
+  /* Supporting text for the newsletter prompt */
+  .newsletter-text {
+    margin-bottom: 20px;
+    font-size: 16px;
+  }
+  
+  /* Cozy Tea Shop logo style with Vampiro One font */
+  .footer-logo {
+    font-family: "Vampiro One", cursive;
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  /* Icon sizing and spacing for Facebook/Instagram buttons */
+  .social-icons i {
+    font-size: 24px;
+    margin-right: 12px;
+    cursor: pointer;
+  }
+
+  /* Email input styling: transparent with underline and white text */
+  .footer-input {
+    flex: 1;
+    min-width: 200px;
+    padding: 10px;
+    border: none;
+    border-bottom: 1px solid white;
+    background-color: transparent;
+    color: white;
+    font-size: 16px;
+    font-family: 'Montserrat', sans-serif;
+    outline: none;
+  }
+  
+  /* Submit button styling for newsletter form */
+  .subscribe-button {
+    white-space: nowrap;
+    padding: 10px 20px;
+    font-size: 14px;
+    border: 1px solid white;
+    border-radius: 8px;
+    background: transparent;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    flex-shrink: 0;
+  }
+  
+  /* Container for footer site links (Help, Shop, etc.) */
+  .footer-links {
+    display: flex;
+    gap: 60px;
+    justify-content: flex-start;
+    text-align: left;
+  }
+  
+  /* Removes default list styling from link columns */
+  .footer-links ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 8px;
+    text-align: left;
+  }
+  
+  /* Styles for each individual link */
+  .footer-links li {
+    margin-bottom: 8px;
+    cursor: pointer;
+  }
+  
+  /* Underline links on hover for accessibility */
+  .footer-links li:hover {
+    text-decoration: underline;
+  }
+
+  /* Responsive tweaks for small screens */
+  @media (max-width: 600px) {
+    .newsletter-row {
+      flex-wrap: wrap;
+    }
+  
+    .subscribe-button {
+      width: 100%;
+      margin-top: 10px;
+    }
+  }

@@ -1,0 +1,199 @@
+.purchase-page {
+    padding: 0;
+    background-color: #fdfbf6;
+    font-family: 'Georgia', serif;
+}
+  
+.purchase-container {
+    max-width: 100%;
+    margin: 0;
+    padding: 0 60px;
+    min-height: calc(100vh - 160px); /* space for nav + footer */
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.back-btn {
+    background-color: #0e465a;
+    color: white;
+    padding: 8px 16px;
+    margin-bottom: 20px;
+    border: none;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+  
+  .back-btn:hover {
+    background-color: #062c39; /* Slightly darker teal on hover */
+}
+
+.back-btn-wrapper {
+    margin-bottom: 1rem;
+    /* optional additional styles */
+}
+  
+/* Two-column layout */
+.two-column-layout {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 40px;
+    width: 100%;
+    max-width: 1200px;
+}
+  
+/* Left: Items Overview */
+.items-overview {
+    flex: 1;
+    background-color: #fdfbf6;
+    border-left: 2px solid #0e465a;
+    border-top: 2px solid #0e465a;
+    border-right: none;
+    border-bottom: none;
+    padding: 20px;
+    box-shadow: none;
+    text-align: left;
+}
+  
+/* Right: Payment Details */
+.payment-details {
+    flex: 1;
+    background-color: #fff;
+    padding: 32px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+}
+  
+/* Shared section styles */
+.items-overview h2,
+.payment-details h2 {
+    font-size: 32px;
+    color: #0e465a;
+    margin-bottom: 12px;
+    text-align: left;
+}
+  
+.items-overview p,
+.payment-details p {
+    font-size: 15px;
+    color: #333;
+    margin-bottom: 20px;
+    text-align: left;
+}
+.items-overview h2,
+.items-overview p,
+.section-title {
+  text-align: left;
+}
+
+/* Add spacing below items-overview elements */
+.items-overview > *:not(:last-child) {
+    margin-bottom: 24px;
+}
+  
+/* Section title utility class */
+.section-title {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 12px;
+    color: #0e465a;
+    text-align: left;
+}
+
+/* ========== Product Item Styles ========== */
+  
+.purchase-item {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ccc;
+    padding: 12px;
+    margin-bottom: 16px;
+}
+  
+.purchase-item img {
+    width: 80px;
+    height: 100px;
+    object-fit: cover;
+    margin-right: 16px;
+}
+  
+.item-info {
+    flex-grow: 1;
+}
+  
+.item-info h4 {
+    margin: 0;
+    font-size: 16px;
+}
+  
+.item-price {
+    font-weight: bold;
+}
+  
+/* ========== Radio Sections ========== */
+  
+.shipping-option,
+.payment-option {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 12px;
+    border-radius: 4px;
+    font-size: 14px;
+}
+  
+.shipping-option span {
+    margin-left: auto;
+    font-weight: bold;
+}
+  
+/* ========== Form ========== */
+  
+.payment-details form {
+    display: flex;
+    flex-direction: column;
+}
+  
+.payment-details input {
+    margin-bottom: 12px;
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.payment-details form .finish-btn {
+    align-self: flex-start; /* or center if you want */
+}
+  
+/* Finish Button */
+.finish-btn {
+    background-color: #0e465a;
+    color: white;
+    padding: 12px;
+    border: none;
+    font-size: 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+  
+.finish-btn:hover {
+    background-color: #093748;
+}
+
+/* Helper class for boxed sections */
+.boxed-section {
+    border: 1px solid #ccc;
+    padding: 16px;
+    border-radius: 4px;
+    background-color: #fafafa;
+}
+
+.boxed-section:not(:last-child) {
+    margin-bottom: 20px;
+}

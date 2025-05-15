@@ -1,0 +1,45 @@
+/* Profile.css - Styles for user profile page */
+.profile-page {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  }
+  
+  .profile-page h2 {
+    text-align: center;
+    color: #0e465a;
+  }
+  
+  .profile-form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 20px;
+  }
+  
+  .profile-form label {
+    font-weight: 500;
+  }
+  
+  .profile-form input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+  }
+  
+  button {
+    padding: 10px 20px;
+    background-color: #0e465a;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  button:hover {
+    background-color: #08303e;
+  }

@@ -1,0 +1,38 @@
+/* About.css - Styling for the About page including heading layout and themed button */
+/* Container for the entire About page — centers content and applies site-wide font and color */
+.about-page {
+    padding: 60px 20px;
+    text-align: center;
+    font-family: "Montserrat", sans-serif;
+    color: #0e465a;
+  }
+  
+  /* Main heading style for name — large, bold, and spaced from top */
+  .about-page h2 {
+    font-size: 32px;
+    margin-bottom: 10px;
+  }
+  
+  /* Subheading style for email or supporting info — smaller and muted */
+  .about-page h5 {
+    font-size: 18px;
+    margin-bottom: 30px;
+    color: #555;
+  }
+  
+  /* Styled button for About section — uses site theme color and rounded shape */
+  .about-button {
+    background-color: #0e465a;
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 25px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+  }
+  
+  /* Hover state for the button — darker teal for interaction feedback */
+  .about-button:hover {
+    background-color: #083640;
+  }

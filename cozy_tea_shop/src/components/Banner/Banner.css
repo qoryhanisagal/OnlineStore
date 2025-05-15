@@ -1,0 +1,19 @@
+/* This is the outer banner container that stretches across the top of the screen */
+.banner {
+  background-color: #68bce6; /* I'm using my brand's deep yellow color here */
+  width: 100%; /* Full width of screen */
+  height: 56px; /* Tall enough to be readable but not too big */
+  display: flex; /* I want to center the text using flexbox */
+  align-items: center; /* Vertically center the text */
+  justify-content: center; /* Horizontally center the text */
+  position: relative; /* Might use this later if I want to add a close button */
+}
+
+/* This is the styling for the promo message inside the banner */
+.banner-text {
+  color: #0e465a; /* White text for contrast on dark background */
+  font-size: 18px; /* Slightly larger than default to stand out */
+  font-family: 'Corben', sans-serif; /* Fancy font for personality */
+  text-align: center;
+  line-height: 28px; /* Gives it breathing room vertically */
+}

@@ -1,0 +1,115 @@
+/* SubscribeBox.css */
+/* Container wrapper with horizontal layout */
+.subscribe-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: stretch;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  background-color: #f8f8f8;
+  border-radius: 12px;
+  overflow: hidden;
+}
+  
+/* Left side (form) takes 50% */
+.subscribe-left {
+    flex: 1 1 50%;
+    padding: 3rem;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .subscribe-left h2 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    color: #0e465a;
+  }
+  
+  .subscribe-left p {
+    margin-bottom: 1.5rem;
+    color: #333;
+    line-height: 1.6;
+  }
+  
+  .subscribe-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    max-width: 500px;
+  }
+  
+  .form-row {
+    display: flex;
+    gap: 1rem;
+  }
+  
+  .subscribe-form input {
+    flex: 1;
+    padding: 12px;
+    border: none;
+    border-bottom: 2px solid #ccc;
+    font-size: 1rem;
+    background-color: #fff;
+    color: #1e3b2f;
+  }
+  
+  .subscribe-form input::placeholder {
+    color: #aaa;
+  }
+  
+  .subscribe-form button {
+    padding: 12px 20px;
+    background-color: #ffd700;
+    color: #1e3b2f;
+    border: none;
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .subscribe-form button:hover {
+    background-color: #e6c200;
+  }
+  
+/* Right side (image) takes 50% */
+.subscribe-right {
+    flex: 1 1 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #e7f0ef; /* Optional: light background */
+  }
+  
+  .subscribe-right img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+  
+  /* Compact Mode */
+  .subscribe-form.compact input,
+  .subscribe-form.compact button {
+    font-size: 0.9rem;
+    padding: 8px 12px;
+  }
+  
+  .subscribe-wrapper.compact {
+    padding: 1.5rem;
+  }
+  
+  @media (max-width: 768px) {
+    .subscribe-wrapper {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .subscribe-right img {
+      width: 100%;
+      max-width: 100%;
+    }
+  }

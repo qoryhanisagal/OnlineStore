@@ -1,0 +1,97 @@
+.newsletter-signup {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: stretch;  /* ✅ make both sides same height */
+    background-color: #68bce6;
+    background-image: url("/img/blue-waves.png"); 
+    background-size: cover;    
+    color: #fff;
+    padding: 4rem 2rem;
+    gap: 4rem;
+    width: 100vw;
+    min-height: 100vh;
+    box-sizing: border-box;
+  }
+
+/* Left Section */
+.left {
+    flex: 1;
+    min-width: 300px;
+    max-width: 600px;
+    padding: 2rem;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: white;     /* Match box appearance */
+    border-radius: 12px;         /* Rounded edges like image */
+  }
+
+.left h2 {
+    font-size: 3rem;        /* Bigger headline */
+    font-weight: 700;       /* Bolder */
+    color: #003b3b;        
+    margin-bottom: 1rem;
+}
+  
+.left p {
+    font-size: 1.5em;      /* Slightly larger body text */
+    line-height: 1.6;       /* Better spacing */
+    color: black;       
+}
+  
+    .left input,
+    .left button {
+    font-size: 1.1rem;        /* Slightly bigger fields/buttons */
+}
+
+/* Right Section */
+.right {
+    flex: 1;
+    min-width: 300px;
+    max-width: 600px;
+    display: flex;
+    align-items: center;     /* Vertically center image */
+    justify-content: center;
+    padding: 0;              /* Remove extra spacing */
+    background-color: transparent; /* ✅ Removes white box */
+    border-radius: 0;        /* ✅ Just in case there's any rounding */
+    background-color: transparent;
+    height: 100%;          /* ✅ Take all available space */
+  }
+  
+  /* Image Styling */
+  .right img {
+    height: 800px;           /* ✅ FORCE it to scale up */
+    width: auto;
+    object-fit: contain;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.right img:hover {
+    transform: scale(1.02); /* Optional: subtle hover zoom effect */
+}
+
+@media (max-width: 768px) {
+.newsletter-signup {
+    flex-direction: column;
+    padding: 2rem 1rem;
+}
+
+.left, .right {
+    max-width: 100%;
+}
+
+.right img {
+    max-width: 100%;
+}
+}
+
+.disclaimer {
+    color: black;
+    font-size: 1rem;
+    font-weight: bold;
+    margin-top: 1rem;
+    text-align: center;
+}
